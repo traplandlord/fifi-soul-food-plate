@@ -145,3 +145,95 @@ BEVERAGES,future_bottled_cogs_estimate,co-pack / self bottle,USD_per_bottle,0.8,
 BEVERAGES,future_bottled_contrib_mid,own beverage,USD_per_bottle,2.0,3.0,4.0,USD,At $4.50 retail − $1.50 COGS ≈ $3; attach to DD/local/ship,estimate,R&D
 BEVERAGES,when_to_launch_bottled,roadmap phase,phase,3,3,4,flag,After Plate Club stable + kitchen path; do not distract Phase 1 pop,estimate,plan timing
 ROADMAP,phase3_bonus_sides_on_marketplace,cake/twist,flag,1,1,1,flag,Standardize DD/UE/GH bag insert: cake slice OR cinnamon twist when charging premium menu price,estimate,strategy
+highlight,H19_live_viewers_to_paid_mid,TikTok LIVE,pct,0.1,1.0,4.2,pct,"Combined viewers→paid mid ~1% (5% click × 40% land-engage × 50% pay approx)",estimate,get-the-bag 2026-09-22
+highlight,H20_rev_per_100_live_viewers_mid,TikTok LIVE,USD,5,20,85,USD,1 paid × $20 mid; high includes ship/bundle/high convert,estimate,funnel CSV
+highlight,H21_overnight_order_by_pt,overnight ship,hour_local,10,10,10,PT,"Order by 10:00 AM PT Mon–Thu for next-day overnight",policy,config orderByLocalTime
+highlight,H22_phase1_pay_stack,Cash+CashApp+Venmo+Square,flag,1,1,1,flag,Phase 1 recommended; Stripe/Apple Pay Phase 2,strategy,playbook §B
+highlight,H23_tiktok_crp_followers_threshold,Creator Rewards,followers,10000,10000,10000,count,Approx CRP eligibility 10k followers + 100k views/30d,med,TikTok Academy 2026
+highlight,H24_ypp_watch_hours_threshold,YouTube Partner Program,watch_hours,4000,4000,8000,hours,4k hrs current full ads; 8k possible for new apps Feb 2027,med,YouTube Help + press 2026
+highlight,H25_dd_never_match_pickup,DoorDash pricing rule,USD_delta,4,6,8,USD,Keep DD ~$26 vs $20 pickup + bonus sweet,calculated,§12 + playbook
+highlight,H26_get_the_bag_flywheel,content↔food,flag,1,1,1,flag,Food $ funds content; content funds food sales; list→Plate Club→kitchen,strategy,playbook diagram
+TIKTOK_LIVE,live_frequency_per_week,TikTok,lives,2,3,4,count,Phase 1 target 2–3 lives/week aligned to cook batches,estimate,playbook §A
+TIKTOK_LIVE,best_window_dinner_start_pt,TikTok,hour_local,18.5,19,20.5,PT,6:30–8:30 PM PT primary hunger window,estimate,playbook §A
+TIKTOK_LIVE,best_window_lunch_start_pt,TikTok,hour_local,11.5,12,13,PT,Secondary lunch scroll window,estimate,playbook §A
+TIKTOK_LIVE,morning_cutoff_live_pt,overnight push,hour_local,8,9,10,PT,Morning live to drive 10 AM order-by,estimate,playbook §A
+TIKTOK_LIVE,scarcity_plate_cap,Soul Food Pop,plates,50,50,50,count,Hard 50-plate live drop,policy,config maxPlates
+TIKTOK_LIVE,hook_to_retained_30s_mid,LIVE retention,pct,40,60,75,pct,Directional; measure LIVE analytics,estimate,funnel
+TIKTOK_LIVE,viewers_to_click_cta,link in bio / pin,pct,2,5,10,pct,Verbal CTA every 3–5 min + pin,estimate,funnel CSV
+TIKTOK_LIVE,click_to_checkout_start,site or Cash App,pct,20,40,60,pct,Of clickers who begin order,estimate,funnel CSV
+TIKTOK_LIVE,checkout_to_paid,prepay,pct,30,50,70,pct,Pay-before-cook lifts close rate,estimate,funnel CSV
+TIKTOK_LIVE,viewers_to_paid_combined,end-to-end,pct,0.12,1.0,4.2,pct,Product of stages; update after 10 lives,estimate,funnel CSV
+TIKTOK_LIVE,rev_per_100_viewers_plate_only,LIVE sales,USD,2,20,84,USD,Low≈0.1%×$20; mid 1%×$20; high ~4%×$20,calculated,funnel
+TIKTOK_LIVE,rev_per_100_viewers_with_ship_mid,LIVE + overnight mix,USD,15,23.4,100,USD,Mid adds ~12% of payers × $28 ship normalized,estimate,funnel upsell
+TIKTOK_LIVE,talk_track_cta_interval_min,LIVE ops,minutes,3,4,5,minutes,Repeat price + link cadence,policy,playbook
+TIKTOK_LIVE,sellout_gross_50x20,Soul Food Pop,USD,1000,1000,1000,USD,Full sellout gross before fees,calculated,50*20
+PAYMENTS,fee_cash_pickup,cash,pct,0,0,0,pct,Best net; count drawer,high,ops
+PAYMENTS,fee_zelle_typical,Zelle,pct,0,0,0,pct,Bank Zelle usually 0%; confirm recipient name,med,bank norms
+PAYMENTS,fee_venmo_business,Venmo Business,pct,1.9,1.9,2.29,pct,1.9%+$0.10 direct; Tap to Pay ~2.29%+$0.10,med,Venmo Help 2026
+PAYMENTS,fee_cashapp_business,Cash App Business,pct,2.6,2.6,3.0,pct,2.6%+$0.15 P2P-to-biz; Tap to Pay 3%,med,Cash App Help 2026
+PAYMENTS,fee_square_in_person,Square,pct,2.6,2.6,2.6,pct,2.6%+$0.15 tap/dip/swipe Free plan,high,Square Support
+PAYMENTS,fee_square_online,Square links/invoices,pct,3.3,3.3,3.3,pct,3.3%+$0.30 online,high,Square Support
+PAYMENTS,fee_stripe_online,Stripe,pct,2.9,2.9,2.9,pct,2.9%+$0.30 online typical US,high,public Stripe pricing
+PAYMENTS,fee_apple_pay,via Square/Stripe,pct,2.6,2.9,3.3,pct,Inherits processor rate,high,processor
+PAYMENTS,fee_doordash_marketplace,DoorDash,pct,15,25,30,pct,Use premium menu price; never match $20,med,prior metrics
+PAYMENTS,fee_mailto_sms_order_path,site order then pay,pct,0,0,0,pct,Order path free until processor fee on pay,high,site model
+PAYMENTS,cod_local_recommended,COD policy,flag,0,0,0,flag,Avoid COD Phase 1 especially overnight,strategy,playbook §B
+PAYMENTS,phase1_stack_cash_cashapp_venmo_square,Phase 1,flag,1,1,1,flag,Mom-friendly low setup,strategy,playbook
+PAYMENTS,phase2_add_stripe_square_links_applepay,Phase 2,flag,1,1,1,flag,Site checkout + tracking,strategy,playbook
+PAYMENTS,when_pay_pickup,before cook preferred,flag,1,1,1,flag,Cash at handoff OK for known walk-ups,policy,playbook
+PAYMENTS,when_pay_overnight,100% before pack,flag,1,1,1,flag,No ship without cleared funds,policy,playbook
+PAYMENTS,fee_dollars_on_20_cashapp_mid,Cash App on $20,USD,0.67,0.67,0.67,USD,2.6%*$20+$0.15=$0.67,calculated,fee math
+PAYMENTS,fee_dollars_on_20_venmo_mid,Venmo Biz on $20,USD,0.48,0.48,0.48,USD,1.9%*$20+$0.10=$0.48,calculated,fee math
+PAYMENTS,fee_dollars_on_20_square_ipos,Square in-person $20,USD,0.67,0.67,0.67,USD,2.6%*$20+$0.15,calculated,fee math
+PAYMENTS,net_after_cashapp_fee_on_20,Cash App,USD,19.33,19.33,19.33,USD,$20−$0.67,calculated,
+PAYMENTS,deposit_overnight_required_pct,overnight,pct,100,100,100,pct,Full prepay,policy,
+MONETIZATION_YT,ypp_full_subs_threshold,YouTube,subscribers,1000,1000,1000,count,Full ad-revenue tier,high,YouTube Help 2026-09
+MONETIZATION_YT,ypp_full_watch_hours_12mo,YouTube,hours,4000,4000,4000,hours,Or 10M Shorts views / 90 days,high,YouTube Help
+MONETIZATION_YT,ypp_shorts_views_90d_alt,YouTube Shorts,views,10000000,10000000,10000000,count,Alternate path to full YPP,high,YouTube Help
+MONETIZATION_YT,ypp_early_fan_funding_subs,YouTube early tier,subscribers,500,500,500,count,Unlocks Super Thanks/memberships/shopping approx,med,LensPOV / YT docs 2026
+MONETIZATION_YT,ypp_early_watch_hours,YouTube early tier,hours,3000,3000,3000,hours,Or 3M Shorts / 90d — fan funding not full ads,med,secondary sources 2026
+MONETIZATION_YT,ypp_2027_new_applicant_hours,YouTube policy change,hours,8000,8000,8000,hours,Reported Feb 1 2027 new-applicant bar; verify official,med,press Aug 2026
+MONETIZATION_YT,content_pillar_cook_haul_pack_asmr,backend YouTube,flag,1,1,1,flag,Long-form cook + haul + ship packing ASMR drives trust + watch hours,strategy,playbook §C
+MONETIZATION_YT,rpm_longform_food_estimate,YouTube ads,USD_per_1000,2,6,12,USD,Wide band; food/lifestyle US; mark estimate,low,industry band
+MONETIZATION_FB,reels_play_bonus_status,Facebook,flag,0,0,0,flag,Reels Play / in-stream / performance bonus ended Aug 31 2025,high,Meta Help
+MONETIZATION_FB,content_monetization_program,Facebook FCM,flag,1,1,1,flag,Invitation-only Content Monetization replacement,med,Meta Help 2026
+MONETIZATION_FB,fcm_followers_cited_unofficial,Facebook,followers,5000,10000,10000,count,Some guides cite ~10k + watch-time; treat unofficial until invited,low,secondary blogs 2026
+MONETIZATION_FB,fcm_watch_minutes_60d_cited,Facebook,minutes,0,600000,600000,minutes,Cited in secondary sources; verify if/when invited,low,FaceBot/Maeve-style guides
+MONETIZATION_FB,cross_post_local_groups,FB groups,flag,1,1,1,flag,Local LA/SoCal groups + event posts for pickup demand,strategy,playbook
+MONETIZATION_FB,rpm_reels_under_fcm_estimate,Facebook Reels,USD_per_1000,0.02,0.08,0.2,USD,Post-bonus ad-share era; very wide / low confidence,low,secondary 2026
+MONETIZATION_TT,crp_followers_min,Creator Rewards,followers,10000,10000,10000,count,Personal acct 18+ eligible country,med,TikTok Academy
+MONETIZATION_TT,crp_views_30d_min,Creator Rewards,views,100000,100000,100000,count,Authentic views last 30 days,med,TikTok Academy
+MONETIZATION_TT,crp_video_min_seconds,Creator Rewards,seconds,60,60,60,seconds,Original >1 min; not Duet/Stitch/Photo Mode,med,TikTok Academy
+MONETIZATION_TT,live_followers_to_go_live,TikTok LIVE,followers,1000,1000,1000,count,Approx regional threshold to unlock LIVE,med,creator guides 2026
+MONETIZATION_TT,live_gifts_nano_per_session_usd,TikTok gifts,USD,5,25,40,USD,Nano directional only — food LIVE may skew lower/higher,low,Toptal-style ranges
+MONETIZATION_TT,crp_rpm_ballpark,Creator Rewards,USD_per_1000,0.2,0.7,1.5,USD,Highly variable qualified views; estimate only,low,creator reports aggregate
+MONETIZATION_TT,flywheel_food_funds_content,ops,USD_per_week,50,150,400,USD,Portion of plate contrib reinvested in props/ads/samples,estimate,strategy
+OVERNIGHT_CUTOFF,order_by_local_time_pt,customer-facing,hour,10,10,10,PT,Mon–Thu next-day overnight,policy,config 2026-09-22
+OVERNIGHT_CUTOFF,order_by_days,customer-facing,days,Mon-Thu,Mon-Thu,Mon-Thu,text,Fri–Sun may roll next window,policy,playbook §D
+OVERNIGHT_CUTOFF,carrier_pickup_time_pt,ops,hour,14,14.5,15,PT,Pack before ~2–3 PM carrier pickup — verify local,estimate,ops
+OVERNIGHT_CUTOFF,tracking_included_paid_overnight,policy,flag,1,1,1,flag,Tracking on paid cold/hot ship,policy,config trackingOptional false for paid
+OVERNIGHT_CUTOFF,local_courier_tracking_optional,local,flag,1,1,1,flag,No-tracking local courier option by ZIP,policy,config note
+OVERNIGHT_CUTOFF,on_time_pack_rate_target,ops KPI,pct,85,92,98,pct,Pack before carrier cutoff,estimate,playbook
+OVERNIGHT_CUTOFF,refund_risk_if_miss_cutoff,overnight GMV,pct,3,5,8,pct,Budget remake/refund until process tight,estimate,playbook
+OVERNIGHT_CUTOFF,ship_cold_addon_usd,site,USD,28,28,28,USD,From config shipCold,policy,config
+OVERNIGHT_CUTOFF,ship_hot_addon_usd,site,USD,35,35,35,USD,From config shipHot,policy,config
+OVERNIGHT_CUTOFF,prepay_required_before_pack,policy,pct,100,100,100,pct,No carrier without cleared payment,policy,
+FUNNEL,stage_viewers_to_click,LIVE,pct,2,5,10,pct,See live-sales-funnel.csv,estimate,2026-09-22
+FUNNEL,stage_click_to_pay_path,LIVE,pct,20,40,60,pct,Land → engage checkout,estimate,funnel
+FUNNEL,stage_checkout_to_paid,LIVE,pct,30,50,70,pct,Prepay discipline,estimate,funnel
+FUNNEL,list_capture_of_payers,email/SMS,pct,10,25,40,pct,Next-drop + Plate Club,estimate,funnel
+FUNNEL,plate_club_of_list,Plate Club,pct,2,8,15,pct,Phase 2 conversion directional,estimate,funnel
+FUNNEL,ugc_review_rate,post-purchase,pct,5,15,30,pct,Duet/stitch/repost ask,estimate,funnel
+FUNNEL,overnight_attach_rate_of_payers,LIVE,pct,5,12,25,pct,Ship upsell during live,estimate,funnel
+CREATIVE_MAX,rank1_live_sellout_effort,creative,score,2,2,2,1to5,Effort med; net highest — core bag,strategy,playbook §E
+CREATIVE_MAX,rank2_pay_before_cook,creative,score,1,1,1,1to5,Low effort high net,strategy,playbook
+CREATIVE_MAX,rank3_overnight_upsell_on_live,creative,score,2,2,2,1to5,Raises $/order,strategy,playbook
+CREATIVE_MAX,rank4_dd_premium_plus_bonus_sweet,creative,score,2,2,2,1to5,Protect marketplace margin,strategy,§12
+CREATIVE_MAX,referral_5_off_both,creative,USD,5,5,5,USD,$5 off referrer + referee after 20+ customers,estimate,playbook
+CREATIVE_MAX,live_only_sku_extra_wing_or_twist,creative,USD,2,4,6,USD,Scarce add-on margin,estimate,playbook
+CREATIVE_MAX,bundle_2_plate_family,creative,USD,36,38,40,USD,Slight discount vs 2×$20; better ship density,estimate,playbook
+CREATIVE_MAX,preorder_calendar,creative,flag,1,1,1,flag,Smooth cook days; reduce waste,strategy,playbook
+CREATIVE_MAX,ship_vs_pickup_by_zip,creative,flag,1,1,1,flag,CTA routing reduces wrong fulfillment,strategy,playbook
+CREATIVE_MAX,ugc_duet_stitch_repost,creative,flag,1,1,1,flag,Algorithm + social proof,strategy,playbook
+CREATIVE_MAX,countdown_stickers,creative,flag,1,1,1,flag,Stories/LIVE urgency,strategy,playbook
+CREATIVE_MAX,bonus_cake_twist_on_premium_dd,creative,USD_cogs,0.4,0.75,1.25,USD,Lil more on backend — already in §12,calculated,prior

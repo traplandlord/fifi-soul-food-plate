@@ -1,0 +1,17 @@
+stage,action,customer_sees,payment_option,conversion_rate_low_pct,conversion_rate_mid_pct,conversion_rate_high_pct,revenue_per_100_viewers_mid_usd,notes
+hook,Open LIVE with scarcity + plate promise,"Tonight only — 50 Soul Food Pop plates $20",none,100,100,100,0,Baseline = 100% of joined viewers
+plate_reveal,Show steam crunch portion close-up,Full plate beauty shot + item names,none,80,90,95,0,Hold attention; drop weak scrollers
+scarcity_pulse,Announce remaining plates every 5 sales,Counter / verbal remaining,none,70,85,92,0,Creates urgency without fake scarcity
+price_stack,State pickup vs overnight vs DD premium,"$20 pickup · overnight +$28/$35 · DD $26",none,60,75,88,0,Clarity reduces later cart abandonment
+cta_link,Pin link + say link in bio / Cash App,Site URL or $cashtag on screen,Cash App or site,2,5,10,0,"Viewers→click; mid 5% industry-ish social CTA"
+click_land,Open site or payment app,Menu + 50-plate banner,site mailto/SMS or Cash App,20,40,60,0,Percent of clickers who start an order path
+checkout_start,Fill name + fulfillment,Pickup vs overnight radios,pending,50,70,85,0,Of landers who engage form
+pay_complete,Funds cleared before cook/ship,Confirmation + order number,"Cash App / Venmo / Square / Zelle / Stripe",30,50,70,20,"Of checkout starters who pay; mid ≈ 1 paid/100 viewers × $20"
+upsell_overnight,Add cold/hot ship on LIVE,Order-by 10AM PT Mon–Thu copy,prepaid overnight,5,12,25,3.4,"% of payers who add ship; mid 12% × ~$28 ≈ $3.36 /100 viewers"
+upsell_bundle,2-plate or family bundle,Bundle price on screen,same as pay,3,8,15,3.2,Optional; mid assumes +$40 incremental on some orders normalized
+local_pickup_fulfill,Hand off at Soul Food Pop,Hot plate + thank you,cash at handoff OK if prepaid preferred,90,97,99,0,Of local paid orders successfully fulfilled
+overnight_pack,Pack Uline before carrier pickup,Tracking text/email,100% prepaid,85,93,98,0,Miss cutoff → refund/remake risk
+review_ask,Ask for duet stitch or Google/IG review,Repost promise,none,5,15,30,0,% of fulfilled who leave public UGC
+list_capture,Email/SMS for next drop + Plate Club,Site club toggle / SMS opt-in,none,10,25,40,0,% of payers onto list
+plate_club_convert,Join Plate Club monthly,Half-off dinners pitch,Stripe/Square later,2,8,15,0.8,"Of list; mid 8% × ~$10/mo proxy per 100 LIVE viewers over time — directional"
+platform_monetize_parallel,CRP gifts YPP FB Content Monetization,Long-form cook + LIVE clips,platform payouts,0,0,0,5,Directional backend $ /100 viewers once thresholds hit — estimate only

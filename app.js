@@ -817,6 +817,18 @@
         "Packed hot or cold in insulated Uline shippers for next-day delivery.";
     }
 
+    const cutoffMsg =
+      CFG.overnightCutoffCopy ||
+      ("Order by " +
+        (CFG.orderByLocalTime || "10:00") +
+        " PT " +
+        (CFG.orderByDaysLabel || "Mon–Thu") +
+        " for next-day overnight (tracking included on paid ship).");
+    const cutoffLive = document.getElementById("overnight-cutoff-live");
+    const cutoffCheckout = document.getElementById("overnight-cutoff-checkout");
+    if (cutoffLive) cutoffLive.textContent = cutoffMsg;
+    if (cutoffCheckout) cutoffCheckout.textContent = cutoffMsg;
+
     const mins = Number(CFG.tiktokLiveCountdownMins) || 90;
     const end = Date.now() + mins * 60 * 1000;
 

@@ -336,3 +336,34 @@ Live conversion placeholder **2–5%**. Paid TikTok/Meta CPM/CPC bands in the CS
 **Future — bottle our own beverages:** After Phase 1–2 are stable (sold-out pops + ship/live working), develop a house bottled drink (tea / punch / agua-fresca style). Placeholder retail **~$3–$6**, COGS **~$0.80–$2.50**, attach to local, DD, and ship. Do not let bottling distract from nailing the $20 dinner first.
 
 *Numbers mid estimates — update in `fifi-comprehensive-metrics.csv` when recipes lock.*
+
+---
+
+## 13. GET THE BAG system (LIVE · pay · overnight · monetize)
+
+**One operating system** for Mom + Traplord: content → TikTok LIVE (50 plates) → pay before cook/ship → fulfill (pickup / local / overnight) → reviews/UGC → platform monetization → Plate Club → kitchen.
+
+### Canonical files
+
+| File | What it is |
+|------|------------|
+| [`get-the-bag-playbook.md`](get-the-bag-playbook.md) | Full narrative: LIVE talk track, payment stack, thresholds, cutoffs, creative rank, flywheel diagram |
+| [`live-sales-funnel.csv`](live-sales-funnel.csv) | Stage rates + revenue per 100 viewers |
+| [`fifi-comprehensive-metrics.csv`](fifi-comprehensive-metrics.csv) | Sections `TIKTOK_LIVE`, `PAYMENTS`, `MONETIZATION_*`, `OVERNIGHT_CUTOFF`, `FUNNEL`, `CREATIVE_MAX` + highlights H19–H26 |
+
+### Overnight customer rule (site + LIVE)
+
+**Order by 10:00 AM PT, Monday–Thursday** for next-day overnight. Tracking on paid cold/hot ship; local courier may be no-tracking. Config knobs: `orderByLocalTime`, `carrierPickupTime`, `trackingOptional` / `overnightCutoffCopy` in site `config.js`.
+
+### Phase 1 money stack
+
+Cash + Cash App Business + Venmo Business + Square (in-person) + SMS/email order path. Phase 2 adds Square links / Stripe / Apple Pay. **Never** COD overnight; **never** match pickup $20 on DoorDash (see §12).
+
+### Platform thresholds (estimates — re-verify)
+
+- TikTok Creator Rewards ≈ 10k followers + 100k views / 30 days (videos >1 min).
+- TikTok LIVE ≈ 1k followers (regional).
+- YouTube YPP ads ≈ 1k subs + 4k watch hours (or 10M Shorts / 90d); higher bar possible for new applicants Feb 2027.
+- Facebook: legacy Reels Play / in-stream ended Aug 31, 2025 → invitation-only Content Monetization.
+
+*§13 added Sep 22, 2026. Confidence tags live in the metrics CSV.*

@@ -8,6 +8,7 @@
  *   rewardsEveryN, rewardsDiscountPct (75% off = pay 25%)
  *   tiktokLiveLabel, tiktokLiveUrl, tiktokLiveCountdownMins
  *   shipCold, shipHot, shipCopy
+ *   orderByLocalTime, orderByDaysLabel, carrierPickupTime, trackingOptional, overnightCutoffCopy
  */
 window.FIFI_CONFIG = {
   businessName: "Fifi's Soul Food Plate",
@@ -49,8 +50,15 @@ window.FIFI_CONFIG = {
   tiktokLiveCountdownMins: 90, // placeholder countdown from page load
   shipCold: 28, // overnight cold — insulated Uline shipper ($)
   shipHot: 35, // overnight hot — insulated Uline shipper ($)
+  // ——— Overnight order window (PT / local) ———
+  orderByLocalTime: "10:00", // customer order-by for next-day overnight (Mon–Thu)
+  orderByDaysLabel: "Mon–Thu",
+  carrierPickupTime: "14:30", // ops: pack before ~2:30 PM carrier pickup
+  trackingOptional: false, // paid overnight includes tracking; local courier may skip
+  overnightCutoffCopy:
+    "Order by 10:00 AM PT Mon–Thu for next-day overnight (tracking included on paid ship). Local courier: tracking optional — text us.",
   shipCopy:
-    "Packed hot or cold in insulated Uline shippers for next-day delivery. We pack before carrier pickup so your plate arrives ready.",
+    "Packed hot or cold in insulated Uline shippers for next-day delivery. We pack before carrier pickup so your plate arrives ready. Order by 10:00 AM PT Mon–Thu for overnight — tracking available on paid ship.",
 
   // Wheel prize weights (higher = more common). Codes map to cart discounts.
   wheelPrizes: [
