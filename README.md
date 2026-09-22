@@ -19,6 +19,8 @@ Static ordering site for **Fifi's Soul Food Plate**. No backend: cart, checkout,
 
 Also see `/workspace/fifi-soul-food/SHOW-MOM.md` if present.
 
+**GET THE BAG:** see [`business/get-the-bag-playbook.md`](business/get-the-bag-playbook.md) + [`business/live-sales-funnel.csv`](business/live-sales-funnel.csv). Overnight line on Live Drop / checkout comes from `overnightCutoffCopy` in `config.js`.
+
 ## Preview locally
 
 ```bash
@@ -55,6 +57,11 @@ Open [http://localhost:8080](http://localhost:8080). Opening `index.html` as a f
 | `tiktokLiveLabel`, `tiktokLiveUrl`, `tiktokLiveCountdownMins` | Tonight's Live Drop |
 | `shipCold`, `shipHot` | Overnight cold / hot add-ons ($) |
 | `shipCopy` | Confident Uline packaging copy |
+| `orderByLocalTime` | Customer order-by time for next-day overnight (default `"10:00"` PT) |
+| `orderByDaysLabel` | Days window label (default `"Mon–Thu"`) |
+| `carrierPickupTime` | Ops pack-before time (default `"14:30"`) |
+| `trackingOptional` | `false` = tracking on paid overnight; local courier may be optional |
+| `overnightCutoffCopy` | Customer-facing cutoff line on Live Drop + checkout |
 
 ### Demo Happy Hour
 
