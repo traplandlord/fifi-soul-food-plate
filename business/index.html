@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fifi's Soul Food Plate — Business Plan & CSVs</title>
+  <title>Fifi's Soul Food Plate — Business Plan & Metrics CSVs</title>
   <style>
     :root { --brown:#3c2415; --cream:#faf6f0; --orange:#c4783a; --gold:#d4a017; }
     * { box-sizing: border-box; }
     body { margin:0; font-family: system-ui, sans-serif; background: var(--cream); color: var(--brown); line-height:1.5; }
-    .wrap { max-width: 720px; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
     h1 { font-family: Georgia, serif; font-size: 1.75rem; margin: 0 0 .35rem; }
     .sub { color:#6b4a32; margin: 0 0 1.5rem; }
     a.back { color: var(--orange); font-weight:600; text-decoration:none; }
+    .hero-csv { background: linear-gradient(135deg,#3c2415,#5c3a21); color:#faf6f0; border-radius:16px; padding:1.25rem 1.35rem; margin-bottom:1.25rem; }
+    .hero-csv h2 { margin:0 0 .5rem; font-size:1.2rem; color: var(--gold); }
+    .hero-csv a { display:inline-block; margin-top:.75rem; background:var(--orange); color:#fff; font-weight:800; text-decoration:none; padding:.65rem 1rem; border-radius:999px; }
     section { background:#fff; border-radius:14px; padding:1.15rem 1.25rem; margin-bottom:1rem;
       box-shadow: 0 6px 20px rgba(60,36,21,.08); border:1px solid rgba(60,36,21,.08); }
     h2 { font-size:1.05rem; margin:0 0 .75rem; color: var(--orange); letter-spacing:.04em; text-transform:uppercase; }
@@ -19,39 +22,48 @@
     li { padding:.55rem 0; border-bottom:1px solid rgba(60,36,21,.08); display:flex; flex-wrap:wrap; gap:.5rem; align-items:baseline; justify-content:space-between; }
     li:last-child { border-bottom:0; }
     li span { flex:1; min-width:180px; }
-    li a { color: var(--brown); font-weight:700; text-decoration:none; background:linear-gradient(90deg,var(--gold),var(--orange));
-      color:#fff; padding:.35rem .7rem; border-radius:999px; font-size:.85rem; white-space:nowrap; }
+    li a { color:#fff; font-weight:700; text-decoration:none; background:linear-gradient(90deg,var(--gold),var(--orange));
+      padding:.35rem .7rem; border-radius:999px; font-size:.85rem; white-space:nowrap; }
     .note { font-size:.9rem; color:#6b4a32; margin-top:1rem; }
+    code { background:rgba(60,36,21,.06); padding:.1rem .35rem; border-radius:4px; }
   </style>
 </head>
 <body>
   <div class="wrap">
     <p><a class="back" href="../">← Ordering site</a></p>
-    <h1>Business plan &amp; numbers</h1>
-    <p class="sub">Fifi's Soul Food Plate — open any file. CSVs open in Sheets/Excel after download.</p>
+    <h1>Business plan &amp; metrics</h1>
+    <p class="sub">All CSVs for Fifi's Soul Food Plate — download and open in Excel or Google Sheets.</p>
+
+    <div class="hero-csv">
+      <h2>Master spreadsheet</h2>
+      <p>Highlights + every metric: sales, social, COGS, profit, Uline, Net-30, DoorDash/Grubhub/Instacart, overnight ship, private courier, Uber/Lyft delivery fees, Happy Hour, Plate Club, rewards.</p>
+      <a href="fifi-comprehensive-metrics.csv" download>Download fifi-comprehensive-metrics.csv</a>
+    </div>
 
     <section>
-      <h2>Spreadsheets (CSV)</h2>
+      <h2>All spreadsheets (CSV)</h2>
       <ul>
-        <li><span>COGS &amp; pricing (ingredients, margins, $20 plate)</span><a href="cogs-and-pricing.csv" download>Download</a></li>
-        <li><span>Shipping &amp; growth (Uline overnight hot/cold, zones, profits)</span><a href="shipping-and-growth-economics.csv" download>Download</a></li>
-        <li><span>Deals (Happy Hour, Plate Club, rewards, TikTok)</span><a href="deals-economics.csv" download>Download</a></li>
+        <li><span>Master metrics (highlights + detail)</span><a href="fifi-comprehensive-metrics.csv" download>Download</a></li>
+        <li><span>Powerhouse stats</span><a href="powerhouse-stats.csv" download>Download</a></li>
+        <li><span>COGS &amp; pricing</span><a href="cogs-and-pricing.csv" download>Download</a></li>
+        <li><span>Shipping &amp; growth (Uline overnight)</span><a href="shipping-and-growth-economics.csv" download>Download</a></li>
+        <li><span>Deals (Happy Hour, Club, rewards)</span><a href="deals-economics.csv" download>Download</a></li>
       </ul>
     </section>
 
     <section>
       <h2>Business plan docs</h2>
       <ul>
-        <li><span>Full business plan + powerhouse roadmap</span><a href="business-plan.md">Open</a></li>
-        <li><span>Cost sheet (detail)</span><a href="cost-sheet.md">Open</a></li>
-        <li><span>Sourcing notes (Depot / Walmart / Uline)</span><a href="sourcing-notes.md">Open</a></li>
+        <li><span>Full business plan + roadmap</span><a href="business-plan.md">Open</a></li>
+        <li><span>Cost sheet</span><a href="cost-sheet.md">Open</a></li>
+        <li><span>Sourcing notes</span><a href="sourcing-notes.md">Open</a></li>
         <li><span>Shipping README</span><a href="shipping-and-growth-README.md">Open</a></li>
+        <li><span>Stats README</span><a href="powerhouse-stats-README.md">Open</a></li>
         <li><span>COGS column guide</span><a href="cogs-and-pricing-README.md">Open</a></li>
-        <li><span>Show Mom quick start</span><a href="SHOW-MOM.md">Open</a></li>
       </ul>
     </section>
 
-    <p class="note">Repo folder: <code>business/</code> on GitHub Pages. Site: <a class="back" href="../">traplandlord.github.io/fifi-soul-food-plate</a></p>
+    <p class="note">GitHub folder: <code>business/</code> in <a class="back" href="https://github.com/traplandlord/fifi-soul-food-plate/tree/main/business">traplandlord/fifi-soul-food-plate</a>. Dedicated data repo (if created): <code>fifi-soul-food-business</code>.</p>
   </div>
 </body>
 </html>

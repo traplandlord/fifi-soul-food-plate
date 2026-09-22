@@ -13,3 +13,7 @@ summary,spin EV house edge,1.00,safe table,per spin,0.56,1.00,0.44,Positive hous
 summary,sub plate margin,10.00,50% off,per plate,3.70,10.00,6.30,63% margin,calculated
 summary,rewards 6-pack effective,105.00,12.5% loyalty cost,per 6 plates,22.20,105.00,82.80,Avg $17.50,calculated
 summary,insulated inventory payback,,10 shippers $120,one-time,120.00,,,~8 local plates or ~10 ship orders to pay inventory,calculated
+local_delivery,mandatory $12 delivery fee + $20 plate,32.0,covers Drive ~$9.95,per local drop,13.649999999999999,32.0,18.35,Customer pays $20+$12; merchant pays ~$9.95 Drive; food+fee margin strong,calculated
+local_delivery,absorb Drive $9.95 no customer fee,20.0,merchant absorbs courier,per drop,13.649999999999999,20.0,6.35,Weaker — avoid unless promo test,calculated
+marketplace,DoorDash/UE 25% on $20 plate,20.0,25% commission,per order,8.7,20.0,11.3,Acquisition channel; $5 fee vs local,calculated
+summary,channel rank net $,16.3,local>deliv+fee>ship>mkt,priority,3.7,20.0,16.3,Best net after fees hierarchy,calculated

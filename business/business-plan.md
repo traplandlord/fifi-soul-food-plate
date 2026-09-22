@@ -273,3 +273,45 @@ Each phase stays fruitful; overnight packaging is a growth lever, not a science 
 ---
 
 *Sections 9–10 added Sep 22, 2026. Not legal, tax, or financial advice — verify permits, promotions, and carrier rules before launch.*
+
+
+---
+
+## 11. Marketplaces, Net-30, Social stats & local delivery
+
+**Scope:** Channel fees, trade credit, paid social guardrails, and local courier policy. Full numbers: **`powerhouse-stats.csv`** and the master **`fifi-comprehensive-metrics.csv`** (highlight rows at top). README: `powerhouse-stats-README.md`.
+
+### 11.1 Marketplace & POS fee impact (on a $20 plate, mid COGS $3.70)
+
+| Channel | Fee shape (research 2026) | Approx. contrib after fee + COGS |
+|---------|---------------------------|----------------------------------|
+| Local cash / pickup | — | **$16.30** (best) |
+| Square Online (processing only) | ~2.9–3.3% + $0.30 | **~$15.30–15.40** |
+| DoorDash / Uber Eats @ ~25% | % of subtotal | **~$11.30** |
+| DoorDash / UE @ 30% | % of subtotal | **~$10.30** |
+| DoorDash Drive / Uber Direct | Flat ~$7–$11/drop (CA Drive often ~$9.95) | Keep **$16.30** if customer pays mandatory delivery fee |
+
+DoorDash Marketplace published bands **15 / 25 / 30%**; Uber Eats **20 / 25 / 30%** (2026 cards). Use marketplaces for **acquisition**, not as the profit engine. Instacart is a weak fit for plated meals (grocery supply-side optional). Toast / Square Online = direct POS alternatives (0% marketplace commission).
+
+### 11.2 Local delivery (private courier, mandatory fees, rideshare)
+
+- **Mandatory customer delivery fee:** recommend flat **$12** SoCal (tiers: near ~$8 / mid ~$12 / far ~$18). Covers Drive/Direct cost + buffer.
+- **Outsource:** DoorDash Drive (~$6.99–$10.99; CA ~$9.95) or Uber Direct (from ~$7.99) from **your** order channel — not marketplace commission.
+- **Private courier / Roadie / bike-car:** quote-based; model **$8–$25**/drop by distance.
+- **FLAG:** Passenger **UberX / Lyft** ToS often restrict commercial food/goods delivery. Prefer **Drive / Direct / licensed courier**. Not legal advice.
+- **Rule:** In-radius local delivery with fee-through ≫ overnight economics; overnight stays for out-of-radius / national.
+
+### 11.3 Net-30 / business credit (research estimates)
+
+Uline often extends **Net-30** via “Invoice Me” after business review (EIN, biz account; may want trade refs / D&B). Webstaurant may use Credit Key Net-30. Restaurant Depot is typically **pay-at-purchase** membership. Later: Sysco/US Foods trade accounts. Square Capital / Amex Blue Business = working capital products, not classic vendor Net-30.  
+**Cash-flow:** deferring ~**$150–$350** of a 50-plate week’s food/supplies for 30 days floats ops — not legal/financial advice.
+
+### 11.4 Social stats guardrail
+
+Live conversion placeholder **2–5%**. Paid TikTok/Meta CPM/CPC bands in the CSV. Target **CPA ≪ $16.30** (soft pause if CPA > ~$12). Content + live frequency and promo budgets are placeholders until measured.
+
+### 11.5 Channel rank (net $)
+
+**Local cash → local delivery + mandatory fee → overnight ship → marketplace @ ~25%.**
+
+*§11 added Sep 22, 2026. Verify current platform rates, ToS, and credit terms before launch.*
