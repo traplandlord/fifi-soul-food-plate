@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fifi What-If Calculators — Profit by Plate &amp; Platform</title>
+  <style>
+    :root {
+      --brown:#3c2415; --cream:#faf6f0; --orange:#c4783a; --gold:#d4a017;
+      --card:#fff; --muted:#6b4a32; --dark:#2a180e; --ok:#2f6b3a; --warn:#8a4b12;
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, sans-serif; background: var(--cream); color: var(--brown); line-height:1.45; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.1rem 3rem; }
+    a.back { color: var(--orange); font-weight:700; text-decoration:none; }
+    h1 { font-family: Georgia, serif; font-size: 1.85rem; margin: .4rem 0 .25rem; }
+    .sub { color: var(--muted); margin: 0 0 1.25rem; }
+    .banner {
+      background: linear-gradient(135deg,#3c2415,#5c3a21); color:#faf6f0;
+      border-radius:16px; padding:1.1rem 1.25rem; margin-bottom:1.25rem;
+    }
+    .banner strong { color: var(--gold); }
+    .disclaimer {
+      font-size:.85rem; color: var(--muted); background: rgba(60,36,21,.06);
+      border-radius:10px; padding:.65rem .9rem; margin: 0 0 1.25rem;
+    }
+    .tabs { display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1rem; }
+    .tab {
+      border:0; cursor:pointer; font-weight:800; font-size:.9rem;
+      padding:.55rem 1rem; border-radius:999px;
+      background: rgba(60,36,21,.1); color: var(--brown);
+    }
+    .tab.active { background: linear-gradient(90deg,var(--gold),var(--orange)); color:#fff; }
+    section.panel { display:none; }
+    section.panel.active { display:block; }
+    .grid { display:grid; gap:1rem; }
+    @media (min-width: 860px) {
+      .grid-2 { grid-template-columns: 1fr 1fr; }
+      .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+      .grid-plat { grid-template-columns: repeat(3, 1fr); }
+    }
+    .card {
+      background: var(--card); border-radius:14px; padding:1rem 1.1rem;
+      box-shadow: 0 6px 20px rgba(60,36,21,.08); border:1px solid rgba(60,36,21,.08);
+    }
+    .card h2, .card h3 { margin:0 0 .75rem; color: var(--orange); font-size:1rem; letter-spacing:.03em; text-transform:uppercase; }
+    label { display:block; font-size:.82rem; font-weight:600; color: var(--muted); margin: .55rem 0 .2rem; }
+    input[type=number], select {
+      width:100%; padding:.5rem .65rem; border-radius:10px;
+      border:1px solid rgba(60,36,21,.2); font-size:1rem; background:#fff; color: var(--brown);
+    }
+    input[type=range] { width:100%; accent-color: var(--orange); }
+    .row { display:flex; gap:.75rem; align-items:center; justify-content:space-between; }
+    .row > * { flex:1; }
+    .toggle {
+      display:inline-flex; align-items:center; gap:.5rem; font-weight:700;
+      background: rgba(60,36,21,.06); padding:.45rem .75rem; border-radius:999px; cursor:pointer;
+      user-select:none;
+    }
+    .toggle input { accent-color: var(--orange); width:1.1rem; height:1.1rem; }
+    .stat {
+      background: linear-gradient(135deg,#3c2415,#5c3a21); color:#faf6f0;
+      border-radius:12px; padding:.85rem 1rem; margin-top:.5rem;
+    }
+    .stat .k { font-size:.75rem; color: var(--gold); text-transform:uppercase; letter-spacing:.04em; }
+    .stat .v { font-size:1.55rem; font-weight:800; margin-top:.15rem; }
+    .stat .s { font-size:.85rem; opacity:.85; margin-top:.2rem; }
+    .plat {
+      border:2px solid rgba(60,36,21,.1); border-radius:14px; padding:.85rem;
+      background:#fff; transition: border-color .15s, transform .15s;
+    }
+    .plat:hover { border-color: var(--orange); }
+    .plat .name { font-weight:800; font-size:1.05rem; }
+    .plat .note { font-size:.8rem; color: var(--muted); margin:.2rem 0 .5rem; }
+    .plat .big { font-size:1.35rem; font-weight:800; color: var(--orange); }
+    .plat .meta { font-size:.85rem; margin-top:.25rem; }
+    .pos { color: #1f6b34; } .neg { color: #9b2c2c; }
+    .mode-bar { display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:.75rem; }
+    .mode-bar button {
+      border:2px solid rgba(60,36,21,.15); background:#fff; border-radius:12px;
+      padding:.65rem 1rem; font-weight:800; cursor:pointer; color: var(--brown);
+    }
+    .mode-bar button.on { border-color: var(--orange); background: linear-gradient(90deg,rgba(212,160,23,.25),rgba(196,120,58,.2)); }
+    table { width:100%; border-collapse:collapse; font-size:.92rem; }
+    th, td { text-align:left; padding:.45rem .35rem; border-bottom:1px solid rgba(60,36,21,.08); }
+    th { color: var(--muted); font-size:.75rem; text-transform:uppercase; }
+    .pill { display:inline-block; background: var(--gold); color:#2a180e; font-weight:800; font-size:.75rem; padding:.2rem .55rem; border-radius:999px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p><a class="back" href="./">← Business hub</a> · <a class="back" href="investor/">Investor folder</a></p>
+    <h1>What-if calculators</h1>
+    <p class="sub">Profit by plate × platform · 24hr full-throttle day/week · Pop-up only vs with location</p>
+
+    <div class="banner">
+      <div><span class="pill">24HR FULL THROTTLE</span></div>
+      <p style="margin:.6rem 0 0;">Daily pop-ups + marketplace all day from day one. Two operating modes:
+        <strong>Pop-up only (no location)</strong> or <strong>With location (rent+utils)</strong>.
+        Defaults match the Jordan/iPhone drop simulator mid knobs.</p>
+    </div>
+    <p class="disclaimer" id="disc">Illustrative model · Not financial advice · Sep 2026</p>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="a">A · Profit by plate × platform</button>
+      <button class="tab" data-tab="b">B · Day / week what-if</button>
+      <button class="tab" data-tab="c">C · Pop-up vs location</button>
+    </div>
+
+    <!-- ===== A ===== -->
+    <section class="panel active" id="panel-a">
+      <div class="grid grid-2">
+        <div class="card">
+          <h2>Itemized COGS (editable)</h2>
+          <div class="grid" style="grid-template-columns:1fr 1fr; gap:.5rem 1rem;">
+            <div><label>Chicken 2pc $</label><input type="number" step="0.01" id="c_chicken"></div>
+            <div><label>Collard greens $</label><input type="number" step="0.01" id="c_greens"></div>
+            <div><label>Candied sweets $</label><input type="number" step="0.01" id="c_sweets"></div>
+            <div><label>Dinner roll $</label><input type="number" step="0.01" id="c_roll"></div>
+            <div><label>Oil / breading / seasoning $</label><input type="number" step="0.01" id="c_oil"></div>
+            <div><label>Yield / waste bridge $</label><input type="number" step="0.01" id="c_yield"></div>
+            <div><label>Pack supplies $</label><input type="number" step="0.01" id="c_pack"></div>
+            <div><label>DD/GH bonus sweet $</label><input type="number" step="0.01" id="c_bonus"></div>
+          </div>
+          <div class="stat"><div class="k">Food COGS total</div><div class="v" id="a_food_total">$3.70</div><div class="s">Chicken + greens + sweets + roll + oil/bread + yield</div></div>
+        </div>
+        <div class="card">
+          <h2>Prices &amp; fees</h2>
+          <div class="grid" style="grid-template-columns:1fr 1fr; gap:.5rem 1rem;">
+            <div><label>Pickup / LIVE $</label><input type="number" step="0.5" id="p_pickup"></div>
+            <div><label>DoorDash menu $</label><input type="number" step="0.5" id="p_dd"></div>
+            <div><label>Grubhub menu $</label><input type="number" step="0.5" id="p_gh"></div>
+            <div><label>Overnight ship charge $</label><input type="number" step="1" id="p_ship"></div>
+            <div><label>Local delivery fee $</label><input type="number" step="0.5" id="p_dfee"></div>
+            <div><label>Drive courier $</label><input type="number" step="0.01" id="f_drive"></div>
+            <div><label>DD commission %</label><input type="number" step="1" id="f_dd"></div>
+            <div><label>GH commission %</label><input type="number" step="1" id="f_gh"></div>
+            <div><label>Payment fee %</label><input type="number" step="0.1" id="f_pay"></div>
+          </div>
+          <p style="font-size:.85rem;color:var(--muted);margin:.75rem 0 0;">Overnight dinner stays $20; Uline BOM sized so overnight nets ~$4.53 mid when defaults hold.</p>
+        </div>
+      </div>
+      <h2 style="margin:1.25rem 0 .6rem;color:var(--orange);font-size:1rem;letter-spacing:.04em;text-transform:uppercase;">Live platform cards</h2>
+      <div class="grid grid-plat" id="plat_cards"></div>
+    </section>
+
+    <!-- ===== B ===== -->
+    <section class="panel" id="panel-b">
+      <div class="mode-bar">
+        <button type="button" id="mode_pop" class="on">Pop-up only (no location)</button>
+        <button type="button" id="mode_loc">With location (rent+utils)</button>
+        <label class="toggle"><input type="checkbox" id="throttle24" checked /> 24hr full-throttle (daily pop + marketplace)</label>
+      </div>
+      <div class="grid grid-2">
+        <div class="card">
+          <h2>Volume &amp; ops</h2>
+          <label>Plates / week <span id="b_plates_lbl"></span></label>
+          <input type="range" min="50" max="900" step="10" id="b_plates" />
+          <label>Or plates / day (7-day)</label>
+          <input type="number" step="1" id="b_plates_day" />
+          <label>Peak night orders</label>
+          <input type="number" step="1" id="b_peak" />
+          <label>Weekend share of week (Fri–Sun)</label>
+          <input type="range" min="40" max="70" step="1" id="b_weekend" />
+          <label>Ad spend / week $</label>
+          <input type="number" step="50" id="b_ads" />
+          <label>Mom cook hours / week</label>
+          <input type="number" step="1" id="b_mom" />
+          <label>Help hours / week</label>
+          <input type="number" step="1" id="b_help" />
+          <div id="rent_wrap" style="display:none">
+            <label>Rent + utils / month $</label>
+            <input type="number" step="100" id="b_rent" />
+          </div>
+        </div>
+        <div class="card">
+          <h2>Platform mix (% of plates)</h2>
+          <label>Pickup % <span id="m_pickup_lbl"></span></label><input type="range" min="0" max="60" id="m_pickup" />
+          <label>LIVE / Cash % <span id="m_live_lbl"></span></label><input type="range" min="0" max="40" id="m_live" />
+          <label>DoorDash % <span id="m_dd_lbl"></span></label><input type="range" min="0" max="60" id="m_dd" />
+          <label>Grubhub % <span id="m_gh_lbl"></span></label><input type="range" min="0" max="40" id="m_gh" />
+          <label>Overnight % <span id="m_on_lbl"></span></label><input type="range" min="0" max="30" id="m_on" />
+          <label>Local delivery % <span id="m_del_lbl"></span></label><input type="range" min="0" max="30" id="m_del" />
+          <p style="font-size:.8rem;color:var(--muted);" id="mix_note">Mix normalized to 100%.</p>
+        </div>
+      </div>
+      <div class="grid grid-3" style="margin-top:1rem;">
+        <div class="stat"><div class="k">Weekly cash net</div><div class="v" id="b_week_net">$0</div><div class="s" id="b_week_sub"></div></div>
+        <div class="stat"><div class="k">Daily cash net (÷7)</div><div class="v" id="b_day_net">$0</div><div class="s" id="b_day_sub"></div></div>
+        <div class="stat"><div class="k">After Mom @$20/hr</div><div class="v" id="b_after_mom">$0</div><div class="s" id="b_be"></div></div>
+      </div>
+      <div class="card" style="margin-top:1rem;">
+        <h2>Which platform mix maximizes profit?</h2>
+        <p id="b_best" style="margin:0;font-size:1.05rem;font-weight:700;"></p>
+        <p id="b_best_detail" style="margin:.4rem 0 0;color:var(--muted);font-size:.9rem;"></p>
+      </div>
+    </section>
+
+    <!-- ===== C ===== -->
+    <section class="panel" id="panel-c">
+      <div class="card">
+        <h2>Same volume — pop-up 24hr vs location 24hr</h2>
+        <label>Shared plates / week <span id="c_plates_lbl"></span></label>
+        <input type="range" min="100" max="900" step="10" id="c_plates" />
+        <label>Shared ad spend / week $</label>
+        <input type="number" step="50" id="c_ads" />
+        <label>Marketplace share % (DD+GH combined, split 65/35)</label>
+        <input type="range" min="30" max="75" id="c_mkt" />
+      </div>
+      <div class="grid grid-2" style="margin-top:1rem;">
+        <div class="card">
+          <h3>Pop-up only · 24hr throttle</h3>
+          <table>
+            <tr><th>Metric</th><th>Value</th></tr>
+            <tr><td>Weekly cash net</td><td id="c_pop_net">—</td></tr>
+            <tr><td>After Mom labor</td><td id="c_pop_mom">—</td></tr>
+            <tr><td>Hire cash (help)</td><td id="c_pop_hire">—</td></tr>
+            <tr><td>Rent</td><td>$0</td></tr>
+            <tr><td>Food COGS</td><td id="c_pop_food">—</td></tr>
+          </table>
+        </div>
+        <div class="card">
+          <h3>With location · 24hr throttle</h3>
+          <table>
+            <tr><th>Metric</th><th>Value</th></tr>
+            <tr><td>Weekly cash net</td><td id="c_loc_net">—</td></tr>
+            <tr><td>After Mom labor</td><td id="c_loc_mom">—</td></tr>
+            <tr><td>Hire cash (help)</td><td id="c_loc_hire">—</td></tr>
+            <tr><td>Rent+utils / wk</td><td id="c_loc_rent">—</td></tr>
+            <tr><td>Food COGS</td><td id="c_loc_food">—</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="stat" style="margin-top:1rem;"><div class="k">Verdict at this volume</div><div class="v" id="c_verdict">—</div><div class="s" id="c_verdict_s"></div></div>
+    </section>
+  </div>
+
+  <script src="calculator-config.js"></script>
+  <script>
+  (function () {
+    const C = window.FIFI_CALC;
+    document.getElementById("disc").textContent = C.disclaimer;
+
+    // Tabs
+    document.querySelectorAll(".tab").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
+        document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("panel-" + btn.dataset.tab).classList.add("active");
+      });
+    });
+
+    function money(n) { return (n < 0 ? "-$" : "$") + Math.abs(n).toFixed(2); }
+    function money0(n) { return (n < 0 ? "-$" : "$") + Math.abs(Math.round(n)).toLocaleString(); }
+
+    // ----- A defaults -----
+    const map = {
+      c_chicken: C.cogs.chicken, c_greens: C.cogs.greens, c_sweets: C.cogs.sweets,
+      c_roll: C.cogs.roll, c_oil: C.cogs.oilBreadSeason, c_yield: C.cogs.yieldWaste,
+      c_pack: C.cogs.pack, c_bonus: C.cogs.ddBonus,
+      p_pickup: C.prices.pickup, p_dd: C.prices.doordash, p_gh: C.prices.grubhub,
+      p_ship: C.prices.overnightShip, p_dfee: C.prices.localFee,
+      f_drive: C.fees.drive, f_dd: C.fees.ddCommission * 100, f_gh: C.fees.ghCommission * 100,
+      f_pay: C.fees.paymentPct * 100
+    };
+    Object.entries(map).forEach(([id, v]) => { document.getElementById(id).value = v; });
+
+    function foodCogs() {
+      return +document.getElementById("c_chicken").value
+        + +document.getElementById("c_greens").value
+        + +document.getElementById("c_sweets").value
+        + +document.getElementById("c_roll").value
+        + +document.getElementById("c_oil").value
+        + +document.getElementById("c_yield").value;
+    }
+    function packCogs() { return +document.getElementById("c_pack").value; }
+    function bonusCogs() { return +document.getElementById("c_bonus").value; }
+
+    function ulineBom() {
+      // Sized so overnight nets ~target when food COGS = current food
+      const total = C.prices.overnightDinner + +document.getElementById("p_ship").value;
+      return total - foodCogs() - C.fees.overnightNetTarget;
+    }
+
+    function profitPerPlate(platform) {
+      const food = foodCogs(), pack = packCogs();
+      const pickup = +document.getElementById("p_pickup").value;
+      const dd = +document.getElementById("p_dd").value;
+      const gh = +document.getElementById("p_gh").value;
+      const ship = +document.getElementById("p_ship").value;
+      const dfee = +document.getElementById("p_dfee").value;
+      const drive = +document.getElementById("f_drive").value;
+      const ddPct = +document.getElementById("f_dd").value / 100;
+      const ghPct = +document.getElementById("f_gh").value / 100;
+      const payPct = +document.getElementById("f_pay").value / 100;
+
+      let rev = 0, fees = 0, fulfill = 0, bonus = 0, pay = 0;
+      if (platform === "pickup") {
+        rev = pickup; pay = rev * payPct;
+      } else if (platform === "live") {
+        rev = pickup; // cash
+      } else if (platform === "doordash") {
+        rev = dd; fees = rev * ddPct; bonus = bonusCogs();
+      } else if (platform === "grubhub") {
+        rev = gh; fees = rev * ghPct; bonus = bonusCogs();
+      } else if (platform === "overnight") {
+        rev = C.prices.overnightDinner + ship;
+        fulfill = ulineBom();
+        pay = rev * payPct;
+      } else if (platform === "local_delivery") {
+        rev = pickup + dfee; fulfill = drive; pay = rev * payPct;
+      }
+      const cogs = food + pack + bonus;
+      const contrib = rev - cogs - fees - fulfill - pay;
+      const margin = rev > 0 ? (contrib / rev) * 100 : 0;
+      return { rev, cogs, fees, fulfill, pay, bonus, contrib, margin };
+    }
+
+    function renderPlats() {
+      document.getElementById("a_food_total").textContent = money(foodCogs());
+      const host = document.getElementById("plat_cards");
+      host.innerHTML = "";
+      const ids = [
+        ["pickup", "Pickup / Pop"],
+        ["live", "LIVE / Cash App"],
+        ["doordash", "DoorDash"],
+        ["grubhub", "Grubhub"],
+        ["overnight", "Overnight ship"],
+        ["local_delivery", "Local delivery"]
+      ];
+      ids.forEach(([id, name]) => {
+        const r = profitPerPlate(id);
+        const div = document.createElement("div");
+        div.className = "plat";
+        div.innerHTML = `<div class="name">${name}</div>
+          <div class="note">Rev ${money(r.rev)} · COGS ${money(r.cogs)} · fees/fulfill ${money(r.fees + r.fulfill + r.pay)}</div>
+          <div class="big ${r.contrib >= 0 ? "pos" : "neg"}">${money(r.contrib)} / plate</div>
+          <div class="meta">Margin ${r.margin.toFixed(1)}% · contribution after fees</div>`;
+        host.appendChild(div);
+      });
+    }
+
+    ["c_chicken","c_greens","c_sweets","c_roll","c_oil","c_yield","c_pack","c_bonus",
+     "p_pickup","p_dd","p_gh","p_ship","p_dfee","f_drive","f_dd","f_gh","f_pay"
+    ].forEach(id => document.getElementById(id).addEventListener("input", renderPlats));
+    renderPlats();
+
+    // ----- B -----
+    let mode = "pop"; // pop | loc
+    const bPlates = document.getElementById("b_plates");
+    const bDay = document.getElementById("b_plates_day");
+    bPlates.value = C.ops.defaultPlatesWeek;
+    bDay.value = Math.round(C.ops.defaultPlatesWeek / 7);
+    document.getElementById("b_peak").value = C.ops.defaultPeakNight;
+    document.getElementById("b_weekend").value = C.ops.weekendShare * 100;
+    document.getElementById("b_ads").value = C.ops.defaultAdWeek;
+    document.getElementById("b_mom").value = C.ops.defaultMomHours;
+    document.getElementById("b_help").value = C.ops.defaultHelpHoursPop;
+    document.getElementById("b_rent").value = C.location.rentUtilsMo;
+    // default marketplace-heavy mix
+    document.getElementById("m_pickup").value = 12;
+    document.getElementById("m_live").value = 8;
+    document.getElementById("m_dd").value = 38;
+    document.getElementById("m_gh").value = 20;
+    document.getElementById("m_on").value = 5;
+    document.getElementById("m_del").value = 10;
+
+    document.getElementById("mode_pop").onclick = () => {
+      mode = "pop";
+      document.getElementById("mode_pop").classList.add("on");
+      document.getElementById("mode_loc").classList.remove("on");
+      document.getElementById("rent_wrap").style.display = "none";
+      document.getElementById("b_help").value = C.ops.defaultHelpHoursPop;
+      renderB();
+    };
+    document.getElementById("mode_loc").onclick = () => {
+      mode = "loc";
+      document.getElementById("mode_loc").classList.add("on");
+      document.getElementById("mode_pop").classList.remove("on");
+      document.getElementById("rent_wrap").style.display = "block";
+      document.getElementById("b_help").value = C.ops.defaultHelpHoursLoc;
+      renderB();
+    };
+
+    bPlates.addEventListener("input", () => {
+      bDay.value = Math.round(+bPlates.value / 7);
+      renderB();
+    });
+    bDay.addEventListener("input", () => {
+      bPlates.value = Math.round(+bDay.value * 7);
+      renderB();
+    });
+
+    function normalizedMix() {
+      const raw = {
+        pickup: +document.getElementById("m_pickup").value,
+        live: +document.getElementById("m_live").value,
+        doordash: +document.getElementById("m_dd").value,
+        grubhub: +document.getElementById("m_gh").value,
+        overnight: +document.getElementById("m_on").value,
+        local_delivery: +document.getElementById("m_del").value
+      };
+      const s = Object.values(raw).reduce((a,b)=>a+b,0) || 1;
+      const out = {};
+      Object.keys(raw).forEach(k => out[k] = raw[k] / s);
+      return out;
+    }
+
+    function weekPnL(plates, mix, ads, momH, helpH, isLoc, rentMo) {
+      let rev = 0, cogs = 0, fees = 0, fulfill = 0, pay = 0;
+      const food = foodCogs(), pack = packCogs();
+      Object.entries(mix).forEach(([plat, w]) => {
+        const n = plates * w;
+        const r = profitPerPlate(plat);
+        // recompute scaled
+        rev += r.rev * n;
+        cogs += (food + pack + (plat === "doordash" || plat === "grubhub" ? bonusCogs() : 0)) * n;
+        // use per-plate fee/fulfill structure
+        const unit = profitPerPlate(plat);
+        fees += (unit.fees) * n;
+        fulfill += unit.fulfill * n;
+        pay += unit.pay * n;
+      });
+      // Simpler: sum contribution * plates by mix
+      let contribSum = 0;
+      Object.entries(mix).forEach(([plat, w]) => {
+        contribSum += profitPerPlate(plat).contrib * plates * w;
+      });
+      const hire = helpH * C.labor.momWage;
+      const rent = isLoc ? rentMo / 4.33 : 0;
+      const fixed = isLoc ? 30 + 80/4.33 + 250/4.33 + 60/4.33 : 55 + 15 + 20 + 15;
+      const net = contribSum - ads - hire - rent - fixed;
+      const afterMom = net - momH * C.labor.momWage;
+      // break-even approx: plates where contrib*plates = opex
+      const avgContrib = Object.entries(mix).reduce((a,[p,w]) => a + profitPerPlate(p).contrib * w, 0);
+      const opex = ads + hire + rent + fixed;
+      const be = avgContrib > 0 ? opex / avgContrib : Infinity;
+      return { net, afterMom, hire, rent, fixed, ads, contribSum, avgContrib, be, cogs: food * plates };
+    }
+
+    function renderB() {
+      document.getElementById("b_plates_lbl").textContent = "(" + bPlates.value + ")";
+      ["pickup","live","dd","gh","on","del"].forEach(k => {
+        const el = document.getElementById("m_" + k);
+        document.getElementById("m_" + k + "_lbl").textContent = el.value + "%";
+      });
+      const mix = normalizedMix();
+      document.getElementById("mix_note").textContent =
+        "Mix normalized to 100%. DD+GH ≈ " + Math.round((mix.doordash + mix.grubhub) * 100) + "%.";
+      const throttle = document.getElementById("throttle24").checked;
+      const plates = +bPlates.value;
+      // 24hr throttle hint: slightly higher effective yield already in volume input
+      const r = weekPnL(
+        plates, mix,
+        +document.getElementById("b_ads").value,
+        +document.getElementById("b_mom").value,
+        +document.getElementById("b_help").value,
+        mode === "loc",
+        +document.getElementById("b_rent").value
+      );
+      document.getElementById("b_week_net").textContent = money0(r.net);
+      document.getElementById("b_week_sub").textContent =
+        (mode === "loc" ? "With location" : "Pop-up only") + (throttle ? " · 24hr throttle" : " · limited hours");
+      document.getElementById("b_day_net").textContent = money0(r.net / 7);
+      const wknd = +document.getElementById("b_weekend").value / 100;
+      document.getElementById("b_day_sub").textContent =
+        "Weekend ~" + Math.round(plates * wknd) + " plates · Peak night input " + document.getElementById("b_peak").value;
+      document.getElementById("b_after_mom").textContent = money0(r.afterMom);
+      document.getElementById("b_be").textContent = "Break-even ≈ " + (isFinite(r.be) ? Math.ceil(r.be) + " plates/wk" : "n/a");
+
+      // Best single-platform at this COGS
+      const plats = ["pickup","live","doordash","grubhub","overnight","local_delivery"];
+      let best = plats[0], bestC = -1e99;
+      plats.forEach(p => {
+        const c = profitPerPlate(p).contrib;
+        if (c > bestC) { bestC = c; best = p; }
+      });
+      const names = {pickup:"Pickup / Pop", live:"LIVE / Cash App", doordash:"DoorDash", grubhub:"Grubhub", overnight:"Overnight", local_delivery:"Local delivery"};
+      document.getElementById("b_best").textContent = names[best] + " — " + money(bestC) + " contribution / plate";
+      document.getElementById("b_best_detail").textContent =
+        "Highest $/plate after fees. For scale, blend DD+GH (volume) with pickup/LIVE (margin). Overnight is reach, not max $/plate.";
+    }
+
+    ["b_peak","b_weekend","b_ads","b_mom","b_help","b_rent","throttle24",
+     "m_pickup","m_live","m_dd","m_gh","m_on","m_del"].forEach(id => {
+      document.getElementById(id).addEventListener("input", renderB);
+    });
+    renderB();
+
+    // ----- C -----
+    document.getElementById("c_plates").value = C.ops.defaultPlatesWeek;
+    document.getElementById("c_ads").value = C.ops.defaultAdWeek;
+    document.getElementById("c_mkt").value = 58;
+
+    function renderC() {
+      const plates = +document.getElementById("c_plates").value;
+      document.getElementById("c_plates_lbl").textContent = "(" + plates + ")";
+      const ads = +document.getElementById("c_ads").value;
+      const mkt = +document.getElementById("c_mkt").value / 100;
+      const dd = mkt * 0.65, gh = mkt * 0.35;
+      const rest = 1 - mkt;
+      const mix = {
+        doordash: dd, grubhub: gh,
+        pickup: rest * 0.35, live: rest * 0.20,
+        overnight: rest * 0.15, local_delivery: rest * 0.30
+      };
+      const pop = weekPnL(plates, mix, ads, C.ops.defaultMomHours, C.ops.defaultHelpHoursPop, false, 0);
+      const loc = weekPnL(plates, mix, ads, C.ops.defaultMomHours, C.ops.defaultHelpHoursLoc, true, C.location.rentUtilsMo);
+      document.getElementById("c_pop_net").textContent = money0(pop.net);
+      document.getElementById("c_pop_mom").textContent = money0(pop.afterMom);
+      document.getElementById("c_pop_hire").textContent = money0(pop.hire);
+      document.getElementById("c_pop_food").textContent = money0(foodCogs() * plates);
+      document.getElementById("c_loc_net").textContent = money0(loc.net);
+      document.getElementById("c_loc_mom").textContent = money0(loc.afterMom);
+      document.getElementById("c_loc_hire").textContent = money0(loc.hire);
+      document.getElementById("c_loc_rent").textContent = money0(loc.rent);
+      document.getElementById("c_loc_food").textContent = money0(foodCogs() * plates);
+      const delta = loc.net - pop.net;
+      if (delta > 0) {
+        document.getElementById("c_verdict").textContent = "Location wins by " + money0(delta) + " / wk";
+        document.getElementById("c_verdict_s").textContent = "At this volume, rent is covered and location cash net beats pop-up only.";
+      } else {
+        document.getElementById("c_verdict").textContent = "Pop-up only wins by " + money0(-delta) + " / wk";
+        document.getElementById("c_verdict_s").textContent = "Stay mobile until lease gate (sustained volume + 3 mo rent buffer).";
+      }
+    }
+    ["c_plates","c_ads","c_mkt"].forEach(id => document.getElementById(id).addEventListener("input", renderC));
+    // when COGS change, refresh B and C too
+    ["c_chicken","c_greens","c_sweets","c_roll","c_oil","c_yield","c_pack","c_bonus",
+     "p_pickup","p_dd","p_gh","p_ship","p_dfee","f_drive","f_dd","f_gh","f_pay"].forEach(id => {
+      document.getElementById(id).addEventListener("input", () => { renderB(); renderC(); });
+    });
+    renderC();
+  })();
+  </script>
+</body>
+</html>

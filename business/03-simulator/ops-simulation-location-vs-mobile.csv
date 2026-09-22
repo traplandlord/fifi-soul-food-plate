@@ -1,0 +1,219 @@
+scenario,period,line_item,category,amount_usd,plates_or_units,notes
+mobile_popup,week_steady,plates_sold_total,volume,0,80,Mid capacity path; weekly plates=80
+mobile_popup,week_steady,rev_pickup_20,revenue,800.0,40,$20 local pickup
+mobile_popup,week_steady,rev_live_drop_cash_20,revenue,160.0,8,TikTok live / Cash App cash component @ $20
+mobile_popup,week_steady,rev_doordash_menu_26,revenue,312.0,12,DD menu $26 (premium vs $20 local)
+mobile_popup,week_steady,rev_overnight_dinner_20,revenue,160.0,8,Dinner portion of overnight
+mobile_popup,week_steady,rev_overnight_ship_65,revenue,520.0,8,Customer ship charge mid-zone $65
+mobile_popup,week_steady,rev_local_delivery_dinner_20,revenue,240.0,12,Dinner on local delivery
+mobile_popup,week_steady,rev_local_delivery_fee_12,revenue,144.0,12,Mandatory $12 SoCal delivery fee
+mobile_popup,week_steady,revenue_total,revenue,2336.0,80,Sum of channel revenues
+mobile_popup,week_steady,cogs_food_3_70,cogs,296.0,80,Mid plate COGS $3.70 (consistent with cogs CSV)
+mobile_popup,week_steady,pack_bags_utensils_extra,cogs,20.0,80,~$0.25/plate beyond food COGS pack rollup
+mobile_popup,week_steady,doordash_commission_25pct,fees,78.0,12,25% of $26 menu
+mobile_popup,week_steady,doordash_drive_courier_cost,fulfillment,119.4,12,Drive ~$9.95/drop mid CA
+mobile_popup,week_steady,uline_ship_BOM_beyond_cogs,fulfillment,614.16,8,Pack+label+media+postage so overnight nets ~$4.53 mid
+mobile_popup,week_steady,payment_processing_fees,fees,48.6,,~2.5% blended on card/app portion
+mobile_popup,week_steady,gas_mileage,opex,45.0,,Market runs + courier assist mid
+mobile_popup,week_steady,permits_amortized,opex,15.0,,MEHKO/seller/health amort. weekly
+mobile_popup,week_steady,insurance_mobile,opex,20.0,,Low fixed; ~$80/mo → ~$20/wk
+mobile_popup,week_steady,phone_data,opex,15.0,,Business line / hotspot
+mobile_popup,week_steady,ads_boost_budget,opex,25.0,,TikTok/Meta test boost mid
+mobile_popup,week_steady,opex_subtotal_excl_mom,opex,120.0,,Gas+permits+ins+phone+ads
+mobile_popup,week_steady,mom_labor_hours,labor_note,0,20,Hours cooked/packed/lived (not always cash)
+mobile_popup,week_steady,mom_labor_valued_20phr,labor_opportunity,400.0,,Opportunity cost @ $20/hr — subtract for true economic profit
+mobile_popup,week_steady,SUMMARY_net_profit_cash,summary,1039.84,80,Revenue − COGS − fees − fulfillment − opex (BEFORE Mom labor value). NOT financial advice.
+mobile_popup,week_steady,SUMMARY_net_profit_after_mom_labor,summary,639.84,80,Cash net − Mom labor valued @ $20/hr
+mobile_popup,month_1,plates_sold_total,volume,0,238,Month = 4.33× weeks @ ~55 plates/wk mid path
+mobile_popup,month_1,rev_pickup_20,revenue,2338.2,117,$20 local pickup
+mobile_popup,month_1,rev_live_drop_cash_20,revenue,519.6,26,TikTok live / Cash App cash component @ $20
+mobile_popup,month_1,rev_doordash_menu_26,revenue,900.64,35,DD menu $26 (premium vs $20 local)
+mobile_popup,month_1,rev_overnight_dinner_20,revenue,519.6,26,Dinner portion of overnight
+mobile_popup,month_1,rev_overnight_ship_65,revenue,1688.7,26,Customer ship charge mid-zone $65
+mobile_popup,month_1,rev_local_delivery_dinner_20,revenue,692.8,35,Dinner on local delivery
+mobile_popup,month_1,rev_local_delivery_fee_12,revenue,415.68,35,Mandatory $12 SoCal delivery fee
+mobile_popup,month_1,revenue_total,revenue,7075.22,238,Sum of channel revenues
+mobile_popup,month_1,cogs_food_3_70,cogs,881.15,238,Mid plate COGS $3.70 (consistent with cogs CSV)
+mobile_popup,month_1,pack_bags_utensils_extra,cogs,59.54,238,~$0.25/plate beyond food COGS pack rollup
+mobile_popup,month_1,doordash_commission_25pct,fees,225.16,35,25% of $26 menu
+mobile_popup,month_1,doordash_drive_courier_cost,fulfillment,344.67,35,Drive ~$9.95/drop mid CA
+mobile_popup,month_1,uline_ship_BOM_beyond_cogs,fulfillment,1994.48,26,Pack+label+media+postage so overnight nets ~$4.53 mid
+mobile_popup,month_1,payment_processing_fees,fees,147.87,,~2.5% blended on card/app portion
+mobile_popup,month_1,gas_mileage,opex,194.85,,Market runs + courier assist mid
+mobile_popup,month_1,permits_amortized,opex,64.95,,MEHKO/seller/health amort. weekly
+mobile_popup,month_1,insurance_mobile,opex,86.6,,Low fixed; ~$80/mo → ~$20/wk
+mobile_popup,month_1,phone_data,opex,64.95,,Business line / hotspot
+mobile_popup,month_1,ads_boost_budget,opex,108.25,,TikTok/Meta test boost mid
+mobile_popup,month_1,opex_subtotal_excl_mom,opex,519.6,,Gas+permits+ins+phone+ads
+mobile_popup,month_1,mom_labor_hours,labor_note,0,86.6,Hours cooked/packed/lived (not always cash)
+mobile_popup,month_1,mom_labor_valued_20phr,labor_opportunity,1732.0,,Opportunity cost @ $20/hr — subtract for true economic profit
+mobile_popup,month_1,SUMMARY_net_profit_cash,summary,2902.75,238,Revenue − COGS − fees − fulfillment − opex (BEFORE Mom labor value). NOT financial advice.
+mobile_popup,month_1,SUMMARY_net_profit_after_mom_labor,summary,1170.75,238,Cash net − Mom labor valued @ $20/hr
+mobile_popup,month_6,plates_sold_total,volume,0,411,Month = 4.33× weeks @ ~95 plates/wk mid path
+mobile_popup,month_6,rev_pickup_20,revenue,4070.2,204,$20 local pickup
+mobile_popup,month_6,rev_live_drop_cash_20,revenue,866.0,43,TikTok live / Cash App cash component @ $20
+mobile_popup,month_6,rev_doordash_menu_26,revenue,1576.12,61,DD menu $26 (premium vs $20 local)
+mobile_popup,month_6,rev_overnight_dinner_20,revenue,866.0,43,Dinner portion of overnight
+mobile_popup,month_6,rev_overnight_ship_65,revenue,2814.5,43,Customer ship charge mid-zone $65
+mobile_popup,month_6,rev_local_delivery_dinner_20,revenue,1212.4,61,Dinner on local delivery
+mobile_popup,month_6,rev_local_delivery_fee_12,revenue,727.44,61,Mandatory $12 SoCal delivery fee
+mobile_popup,month_6,revenue_total,revenue,12132.66,411,Sum of channel revenues
+mobile_popup,month_6,cogs_food_3_70,cogs,1522.0,411,Mid plate COGS $3.70 (consistent with cogs CSV)
+mobile_popup,month_6,pack_bags_utensils_extra,cogs,102.84,411,~$0.25/plate beyond food COGS pack rollup
+mobile_popup,month_6,doordash_commission_25pct,fees,394.03,61,25% of $26 menu
+mobile_popup,month_6,doordash_drive_courier_cost,fulfillment,603.17,61,Drive ~$9.95/drop mid CA
+mobile_popup,month_6,uline_ship_BOM_beyond_cogs,fulfillment,3324.14,43,Pack+label+media+postage so overnight nets ~$4.53 mid
+mobile_popup,month_6,payment_processing_fees,fees,253.09,,~2.5% blended on card/app portion
+mobile_popup,month_6,gas_mileage,opex,194.85,,Market runs + courier assist mid
+mobile_popup,month_6,permits_amortized,opex,64.95,,MEHKO/seller/health amort. weekly
+mobile_popup,month_6,insurance_mobile,opex,86.6,,Low fixed; ~$80/mo → ~$20/wk
+mobile_popup,month_6,phone_data,opex,64.95,,Business line / hotspot
+mobile_popup,month_6,ads_boost_budget,opex,108.25,,TikTok/Meta test boost mid
+mobile_popup,month_6,opex_subtotal_excl_mom,opex,519.6,,Gas+permits+ins+phone+ads
+mobile_popup,month_6,mom_labor_hours,labor_note,0,86.6,Hours cooked/packed/lived (not always cash)
+mobile_popup,month_6,mom_labor_valued_20phr,labor_opportunity,1732.0,,Opportunity cost @ $20/hr — subtract for true economic profit
+mobile_popup,month_6,SUMMARY_net_profit_cash,summary,5413.8,411,Revenue − COGS − fees − fulfillment − opex (BEFORE Mom labor value). NOT financial advice.
+mobile_popup,month_6,SUMMARY_net_profit_after_mom_labor,summary,3681.8,411,Cash net − Mom labor valued @ $20/hr
+mobile_popup,month_12,plates_sold_total,volume,0,498,Month = 4.33× weeks @ ~115 plates/wk mid path
+mobile_popup,month_12,rev_pickup_20,revenue,4936.2,247,$20 local pickup
+mobile_popup,month_12,rev_live_drop_cash_20,revenue,1039.2,52,TikTok live / Cash App cash component @ $20
+mobile_popup,month_12,rev_doordash_menu_26,revenue,1913.86,74,DD menu $26 (premium vs $20 local)
+mobile_popup,month_12,rev_overnight_dinner_20,revenue,1039.2,52,Dinner portion of overnight
+mobile_popup,month_12,rev_overnight_ship_65,revenue,3377.4,52,Customer ship charge mid-zone $65
+mobile_popup,month_12,rev_local_delivery_dinner_20,revenue,1472.2,74,Dinner on local delivery
+mobile_popup,month_12,rev_local_delivery_fee_12,revenue,883.32,74,Mandatory $12 SoCal delivery fee
+mobile_popup,month_12,revenue_total,revenue,14661.38,498,Sum of channel revenues
+mobile_popup,month_12,cogs_food_3_70,cogs,1842.41,498,Mid plate COGS $3.70 (consistent with cogs CSV)
+mobile_popup,month_12,pack_bags_utensils_extra,cogs,124.49,498,~$0.25/plate beyond food COGS pack rollup
+mobile_popup,month_12,doordash_commission_25pct,fees,478.47,74,25% of $26 menu
+mobile_popup,month_12,doordash_drive_courier_cost,fulfillment,732.42,74,Drive ~$9.95/drop mid CA
+mobile_popup,month_12,uline_ship_BOM_beyond_cogs,fulfillment,3988.97,52,Pack+label+media+postage so overnight nets ~$4.53 mid
+mobile_popup,month_12,payment_processing_fees,fees,305.7,,~2.5% blended on card/app portion
+mobile_popup,month_12,gas_mileage,opex,194.85,,Market runs + courier assist mid
+mobile_popup,month_12,permits_amortized,opex,64.95,,MEHKO/seller/health amort. weekly
+mobile_popup,month_12,insurance_mobile,opex,86.6,,Low fixed; ~$80/mo → ~$20/wk
+mobile_popup,month_12,phone_data,opex,64.95,,Business line / hotspot
+mobile_popup,month_12,ads_boost_budget,opex,108.25,,TikTok/Meta test boost mid
+mobile_popup,month_12,opex_subtotal_excl_mom,opex,519.6,,Gas+permits+ins+phone+ads
+mobile_popup,month_12,mom_labor_hours,labor_note,0,86.6,Hours cooked/packed/lived (not always cash)
+mobile_popup,month_12,mom_labor_valued_20phr,labor_opportunity,1732.0,,Opportunity cost @ $20/hr — subtract for true economic profit
+mobile_popup,month_12,SUMMARY_net_profit_cash,summary,6669.33,498,Revenue − COGS − fees − fulfillment − opex (BEFORE Mom labor value). NOT financial advice.
+mobile_popup,month_12,SUMMARY_net_profit_after_mom_labor,summary,4937.33,498,Cash net − Mom labor valued @ $20/hr
+fixed_location,week_steady,plates_sold_total,volume,0,180,Small kitchen/stall mid path; weekly plates=180
+fixed_location,week_steady,bottled_drinks_units,volume,0,40,Later bottled drinks line @ $3.50 mid
+fixed_location,week_steady,rev_walkup_pickup_20,revenue,1760.0,88,$20 walk-up / preorder pickup
+fixed_location,week_steady,rev_doordash_menu_26,revenue,1534.0,59,Higher DD volume share (~30%) @ $26
+fixed_location,week_steady,rev_overnight_bundle,revenue,850.0,10,$20+$65 overnight bundle
+fixed_location,week_steady,rev_local_delivery_bundle,revenue,736.0,23,$20+$12 delivery
+fixed_location,week_steady,rev_bottled_drinks_3_50,revenue,140.0,40,Drink attach
+fixed_location,week_steady,revenue_total,revenue,5020.0,180,Food + drinks + fees
+fixed_location,week_steady,cogs_food_and_drinks,cogs,698.0,180,Food $3.70/plate + drinks $0.80
+fixed_location,week_steady,pack_extra,cogs,54.0,180,~$0.30/plate stall packaging
+fixed_location,week_steady,doordash_commission_25pct,fees,383.5,59,25% of DD menu
+fixed_location,week_steady,doordash_drive_courier_cost,fulfillment,228.85,23,~$9.95/drop
+fixed_location,week_steady,uline_ship_BOM_beyond_cogs,fulfillment,767.7,10,Overnight pack BOM
+fixed_location,week_steady,payment_processing_fees,fees,97.61,,~2.8% blended non-DD
+fixed_location,week_steady,rent_small_footprint_socal,fixed,808.31,,$3500/mo mid SoCal stall/kitchen ÷ 4.33 wks (research band $2k–$5k)
+fixed_location,week_steady,utilities,fixed,92.38,,~$400/mo utilities
+fixed_location,week_steady,insurance_higher,fixed,57.74,,~$250/mo commercial / higher than mobile
+fixed_location,week_steady,hired_labor_part_time,labor,369.52,,~$1600/mo part-time help (~20 hr/wk @ $20)
+fixed_location,week_steady,permits_amortized,fixed,18.48,,Health/permit amort.
+fixed_location,week_steady,phone_data,fixed,13.86,,Biz phone
+fixed_location,week_steady,ads_local_boost,opex,46.19,,Higher local ads with storefront
+fixed_location,week_steady,gas_runs,opex,25.0,,Lower than mobile (less hopping)
+fixed_location,week_steady,fixed_opex_subtotal,fixed,1431.47,,Rent+utils+ins+hired labor+permits+phone+ads+gas
+fixed_location,week_steady,mom_labor_hours,labor_note,0,35,Owner hours higher with stall ops
+fixed_location,week_steady,mom_labor_valued_20phr,labor_opportunity,700.0,,Opportunity cost @ $20/hr
+fixed_location,week_steady,SUMMARY_net_profit_cash,summary,1358.88,180,BEFORE Mom opportunity cost. NOT financial advice.
+fixed_location,week_steady,SUMMARY_net_profit_after_mom_labor,summary,658.88,180,Cash net − Mom labor valued
+fixed_location,month_1,plates_sold_total,volume,0,520,Month1 ramp @ ~120 plates/wk × 4.33
+fixed_location,month_1,bottled_drinks_units,volume,0,108,Later bottled drinks line @ $3.50 mid
+fixed_location,month_1,rev_walkup_pickup_20,revenue,5022.8,251,$20 walk-up / preorder pickup
+fixed_location,month_1,rev_doordash_menu_26,revenue,4390.62,169,Higher DD volume share (~30%) @ $26
+fixed_location,month_1,rev_overnight_bundle,revenue,2576.35,30,$20+$65 overnight bundle
+fixed_location,month_1,rev_local_delivery_bundle,revenue,2216.96,69,$20+$12 delivery
+fixed_location,month_1,rev_bottled_drinks_3_50,revenue,378.88,108,Drink attach
+fixed_location,month_1,revenue_total,revenue,14585.6,520,Food + drinks + fees
+fixed_location,month_1,cogs_food_and_drinks,cogs,2009.12,520,Food $3.70/plate + drinks $0.80
+fixed_location,month_1,pack_extra,cogs,155.88,520,~$0.30/plate stall packaging
+fixed_location,month_1,doordash_commission_25pct,fees,1097.65,169,25% of DD menu
+fixed_location,month_1,doordash_drive_courier_cost,fulfillment,689.34,69,~$9.95/drop
+fixed_location,month_1,uline_ship_BOM_beyond_cogs,fulfillment,2326.9,30,Overnight pack BOM
+fixed_location,month_1,payment_processing_fees,fees,285.46,,~2.8% blended non-DD
+fixed_location,month_1,rent_small_footprint_socal,fixed,3500.0,,$3500/mo mid SoCal stall/kitchen ÷ 4.33 wks (research band $2k–$5k)
+fixed_location,month_1,utilities,fixed,400.0,,~$400/mo utilities
+fixed_location,month_1,insurance_higher,fixed,250.0,,~$250/mo commercial / higher than mobile
+fixed_location,month_1,hired_labor_part_time,labor,1600.0,,~$1600/mo part-time help (~20 hr/wk @ $20)
+fixed_location,month_1,permits_amortized,fixed,80.0,,Health/permit amort.
+fixed_location,month_1,phone_data,fixed,60.0,,Biz phone
+fixed_location,month_1,ads_local_boost,opex,200.0,,Higher local ads with storefront
+fixed_location,month_1,gas_runs,opex,108.25,,Lower than mobile (less hopping)
+fixed_location,month_1,fixed_opex_subtotal,fixed,6198.25,,Rent+utils+ins+hired labor+permits+phone+ads+gas
+fixed_location,month_1,mom_labor_hours,labor_note,0,151.6,Owner hours higher with stall ops
+fixed_location,month_1,mom_labor_valued_20phr,labor_opportunity,3031.0,,Opportunity cost @ $20/hr
+fixed_location,month_1,SUMMARY_net_profit_cash,summary,1823.01,520,BEFORE Mom opportunity cost. NOT financial advice.
+fixed_location,month_1,SUMMARY_net_profit_after_mom_labor,summary,-1207.99,520,Cash net − Mom labor valued
+fixed_location,month_6,plates_sold_total,volume,0,1082,Month6 mid @ ~250 plates/wk × 4.33
+fixed_location,month_6,bottled_drinks_units,volume,0,346,Later bottled drinks line @ $3.50 mid
+fixed_location,month_6,rev_walkup_pickup_20,revenue,10478.6,524,$20 walk-up / preorder pickup
+fixed_location,month_6,rev_doordash_menu_26,revenue,9231.56,355,Higher DD volume share (~30%) @ $26
+fixed_location,month_6,rev_overnight_bundle,revenue,5152.7,61,$20+$65 overnight bundle
+fixed_location,month_6,rev_local_delivery_bundle,revenue,4572.48,143,$20+$12 delivery
+fixed_location,month_6,rev_bottled_drinks_3_50,revenue,1212.4,346,Drink attach
+fixed_location,month_6,revenue_total,revenue,30647.74,1082,Food + drinks + fees
+fixed_location,month_6,cogs_food_and_drinks,cogs,4282.37,1082,Food $3.70/plate + drinks $0.80
+fixed_location,month_6,pack_extra,cogs,324.75,1082,~$0.30/plate stall packaging
+fixed_location,month_6,doordash_commission_25pct,fees,2307.89,355,25% of DD menu
+fixed_location,month_6,doordash_drive_courier_cost,fulfillment,1421.76,143,~$9.95/drop
+fixed_location,month_6,uline_ship_BOM_beyond_cogs,fulfillment,4653.8,61,Overnight pack BOM
+fixed_location,month_6,payment_processing_fees,fees,599.65,,~2.8% blended non-DD
+fixed_location,month_6,rent_small_footprint_socal,fixed,3500.0,,$3500/mo mid SoCal stall/kitchen ÷ 4.33 wks (research band $2k–$5k)
+fixed_location,month_6,utilities,fixed,400.0,,~$400/mo utilities
+fixed_location,month_6,insurance_higher,fixed,250.0,,~$250/mo commercial / higher than mobile
+fixed_location,month_6,hired_labor_part_time,labor,1600.0,,~$1600/mo part-time help (~20 hr/wk @ $20)
+fixed_location,month_6,permits_amortized,fixed,80.0,,Health/permit amort.
+fixed_location,month_6,phone_data,fixed,60.0,,Biz phone
+fixed_location,month_6,ads_local_boost,opex,200.0,,Higher local ads with storefront
+fixed_location,month_6,gas_runs,opex,108.25,,Lower than mobile (less hopping)
+fixed_location,month_6,fixed_opex_subtotal,fixed,6198.25,,Rent+utils+ins+hired labor+permits+phone+ads+gas
+fixed_location,month_6,mom_labor_hours,labor_note,0,151.6,Owner hours higher with stall ops
+fixed_location,month_6,mom_labor_valued_20phr,labor_opportunity,3031.0,,Opportunity cost @ $20/hr
+fixed_location,month_6,SUMMARY_net_profit_cash,summary,10859.27,1082,BEFORE Mom opportunity cost. NOT financial advice.
+fixed_location,month_6,SUMMARY_net_profit_after_mom_labor,summary,7828.27,1082,Cash net − Mom labor valued
+fixed_location,month_12,plates_sold_total,volume,0,1386,Month12 scale @ ~320 plates/wk × 4.33
+fixed_location,month_12,bottled_drinks_units,volume,0,520,Later bottled drinks line @ $3.50 mid
+fixed_location,month_12,rev_walkup_pickup_20,revenue,13596.2,680,$20 walk-up / preorder pickup
+fixed_location,month_12,rev_doordash_menu_26,revenue,11708.32,450,Higher DD volume share (~30%) @ $26
+fixed_location,month_12,rev_overnight_bundle,revenue,6256.85,74,$20+$65 overnight bundle
+fixed_location,month_12,rev_local_delivery_bundle,revenue,5819.52,182,$20+$12 delivery
+fixed_location,month_12,rev_bottled_drinks_3_50,revenue,1818.6,520,Drink attach
+fixed_location,month_12,revenue_total,revenue,39199.49,1386,Food + drinks + fees
+fixed_location,month_12,cogs_food_and_drinks,cogs,5542.4,1386,Food $3.70/plate + drinks $0.80
+fixed_location,month_12,pack_extra,cogs,415.68,1386,~$0.30/plate stall packaging
+fixed_location,month_12,doordash_commission_25pct,fees,2927.08,450,25% of DD menu
+fixed_location,month_12,doordash_drive_courier_cost,fulfillment,1809.51,182,~$9.95/drop
+fixed_location,month_12,uline_ship_BOM_beyond_cogs,fulfillment,5651.04,74,Overnight pack BOM
+fixed_location,month_12,payment_processing_fees,fees,769.75,,~2.8% blended non-DD
+fixed_location,month_12,rent_small_footprint_socal,fixed,3500.0,,$3500/mo mid SoCal stall/kitchen ÷ 4.33 wks (research band $2k–$5k)
+fixed_location,month_12,utilities,fixed,400.0,,~$400/mo utilities
+fixed_location,month_12,insurance_higher,fixed,250.0,,~$250/mo commercial / higher than mobile
+fixed_location,month_12,hired_labor_part_time,labor,1600.0,,~$1600/mo part-time help (~20 hr/wk @ $20)
+fixed_location,month_12,permits_amortized,fixed,80.0,,Health/permit amort.
+fixed_location,month_12,phone_data,fixed,60.0,,Biz phone
+fixed_location,month_12,ads_local_boost,opex,200.0,,Higher local ads with storefront
+fixed_location,month_12,gas_runs,opex,108.25,,Lower than mobile (less hopping)
+fixed_location,month_12,fixed_opex_subtotal,fixed,6198.25,,Rent+utils+ins+hired labor+permits+phone+ads+gas
+fixed_location,month_12,mom_labor_hours,labor_note,0,151.6,Owner hours higher with stall ops
+fixed_location,month_12,mom_labor_valued_20phr,labor_opportunity,3031.0,,Opportunity cost @ $20/hr
+fixed_location,month_12,SUMMARY_net_profit_cash,summary,15885.78,1386,BEFORE Mom opportunity cost. NOT financial advice.
+fixed_location,month_12,SUMMARY_net_profit_after_mom_labor,summary,12854.78,1386,Cash net − Mom labor valued
+summary_compare,week_steady,mobile_net_cash_at_80_plates,summary,1039.84,80,Mobile popup mid week net (cash)
+summary_compare,week_steady,location_net_cash_at_180_plates,summary,1358.88,180,Fixed location mid week net (cash)
+summary_compare,breakeven,location_cash_breakeven_plates_per_wk,summary,0,95,Approx plates/wk for location cash net > $0 (mid rent $3500+utils); calc net≈$39
+summary_compare,breakeven,plates_wk_location_beats_mobile,summary,0,160,Approx plates/wk for location cash net ≥ mobile@80 (~$1040/wk); prefer lease only with demand + buffer
+summary_compare,when_to_lease,gate_sustained_plates_wk,summary,0,100,Business-plan Phase 4: sustained ≥80–100 plates/wk blended 8+ weeks
+summary_compare,when_to_lease,gate_positive_contrib_weeks,summary,0,8,≥8 weeks positive contribution after labor
+summary_compare,when_to_lease,gate_cash_buffer_months_rent,summary,0,3,Cash buffer ≥ 3 months rent+deposits from operating profit
+summary_compare,when_to_lease,recommendation_plain,summary,0,160,"LEASE when: (1) mobile already ~80–100+/wk for 8+ wks, (2) forecast ≥~160 plates/wk at stall to BEAT mobile net, (3) 3 mo rent cash buffer. Until then stay mobile. NOT financial advice."
+summary_compare,month_6,mobile_month6_net_cash,summary,5413.8,411,~95 plates/wk × 4.33 wks
+summary_compare,month_6,location_month6_net_cash,summary,10859.27,1082,~250 plates/wk × 4.33 wks

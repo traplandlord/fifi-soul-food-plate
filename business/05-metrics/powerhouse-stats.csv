@@ -1,0 +1,104 @@
+section,metric,channel_or_partner,unit,value_low,value_mid,value_high,currency_or_pct,notes,confidence,source_or_date
+SALES,local_pop_dinner_price,Soul Food Pop local,USD_per_plate,20,20,20,USD,Flyer Fried Chicken Dinner sell price (2pc chicken + greens + candied sweets + roll),sourced,flyer / cogs CSV 2026-09-22
+SALES,fifty_plate_sellout_revenue,Soul Food Pop,USD_per_event,1000,1000,1000,USD,"50 plates × $20 = $1,000 gross revenue at sellout",calculated,50*$20
+SALES,fifty_plate_sellout_cogs_mid,Soul Food Pop,USD_per_event,145,185,260,USD,50 × low/mid/high plate COGS ($2.90/$3.70/$5.20),calculated,cogs rollup 2026-09-22
+SALES,fifty_plate_sellout_contribution_mid,Soul Food Pop,USD_per_event,740,815,855,USD,Revenue − COGS at mid = $1000−$185 = $815,calculated,deals / shipping CSV
+SALES,contribution_margin_per_plate_mid_cogs,local pickup,USD_per_plate,14.8,16.3,17.1,USD,$20 − mid COGS $3.70 = $16.30 contribution (81.5% margin),calculated,cogs CSV scenario
+SALES,weekly_plate_target_phase1,Phase 1 Pop,plates_per_week,25,40,50,count,Phase 1: prove pop; steady 40–50/wk before scaling spend,estimate,business-plan §10
+SALES,weekly_plate_target_phase2,Phase 2 Ship+Live,plates_per_week,50,70,100,count,Local pops + 5–15 ship orders/wk blended,estimate,business-plan §10
+SALES,weekly_plate_target_phase3,Phase 3 Retention,plates_per_week,70,100,140,count,Club + rewards lift repeat; less cold traffic dependence,estimate,business-plan §10
+SALES,weekly_plate_target_phase4,Phase 4 Lease gate,plates_per_week,80,100,150,count,Lease gate sample: sustained ≥80–100 plates/wk blended 8+ weeks,estimate,business-plan §10
+SALES,breakeven_plates_day_fixed_50,local $20 mid COGS,plates_per_day,3,4,4,count,Fixed $50/day ÷ $16.30 contrib ≈ 3.1 → ~4 plates,calculated,$50/$16.30
+SALES,breakeven_plates_day_fixed_100,local $20 mid COGS,plates_per_day,6,7,7,count,Fixed $100/day ÷ $16.30 ≈ 6.1 → ~7 plates,calculated,$100/$16.30
+SALES,breakeven_plates_day_fixed_150,local $20 mid COGS,plates_per_day,9,10,10,count,Fixed $150/day ÷ $16.30 ≈ 9.2 → ~10 plates,calculated,$150/$16.30
+SALES,breakeven_plates_day_fixed_200,local $20 mid COGS,plates_per_day,12,13,13,count,Fixed $200/day ÷ $16.30 ≈ 12.3 → ~13 plates,calculated,$200/$16.30
+SOCIAL_MEDIA,tiktok_organic_reach_per_post,TikTok,impressions,500,2500,15000,count,Early-account organic band; food vertical often higher engagement,estimate,placeholder ops 2026-09-22
+SOCIAL_MEDIA,ig_organic_reach_per_post,Instagram,impressions,200,1200,8000,count,Reels typically outperform static for food,estimate,placeholder 2026-09-22
+SOCIAL_MEDIA,fb_organic_reach_per_post,Facebook,impressions,100,600,3000,count,Lower organic reach; use for local groups/events,estimate,placeholder 2026-09-22
+SOCIAL_MEDIA,tiktok_paid_cpm,TikTok Ads,USD_per_1000_impr,5,8,12,USD,Food/awareness CPM rough band 2025–2026,sourced,Web Tonic / Clikim TikTok F&B 2026
+SOCIAL_MEDIA,tiktok_paid_cpc,TikTok Ads,USD_per_click,0.3,0.52,0.85,USD,Food & beverage in-feed CPC mid ~$0.52,sourced,Web Tonic food TikTok ads 2026
+SOCIAL_MEDIA,meta_ig_fb_paid_cpm,Meta Ads,USD_per_1000_impr,8,12,18,USD,Restaurants/F&B Meta CPM band US 2025–2026,sourced,Sovran/Clikim/Web Tonic 2026
+SOCIAL_MEDIA,meta_ig_fb_paid_cpc,Meta Ads,USD_per_click,0.7,0.85,1.15,USD,Restaurant CPC often $0.72–$0.85; catering higher ~$1.15,sourced,Hawky/Web Tonic/CuFinder 2026
+SOCIAL_MEDIA,live_viewer_to_buyer_conversion,TikTok Live,pct_of_viewers,2,3.5,5,pct,Assumption until measured; limited drops + scarcity,estimate,shipping CSV / deals 2026-09-22
+SOCIAL_MEDIA,cost_per_acquisition_paid_social,TikTok+Meta blended,USD_per_customer,4,8,18,USD,Rough CPA for $20 plate impulse; must stay << $16.30 contrib,estimate,model from CPC×CVR 2026-09-22
+SOCIAL_MEDIA,cpa_vs_contribution_headroom,paid social,USD_headroom,0,8.3,12.3,USD,Mid: $16.30−$8 CPA = $8.30 left after ads; kill ads if CPA > ~$12,calculated,contrib−CPA
+SOCIAL_MEDIA,content_posts_per_week,TikTok+IG+FB,posts_per_week,5,10,14,count,"Mix: cook clips, plate ASMR, pop countdowns, live clips",estimate,ops placeholder
+SOCIAL_MEDIA,lives_per_week,TikTok Live,lives_per_week,1,2,3,count,Phase 2: 1–3 lives/wk with drop cutoffs announced,estimate,roadmap
+SOCIAL_MEDIA,hashtag_promo_budget_weekly,boosted posts,USD_per_week,0,25,75,USD,Placeholder boost/hashtag promo until measured ROAS,estimate,placeholder budget
+SOCIAL_MEDIA,hashtag_promo_budget_monthly,paid social test,USD_per_month,0,100,300,USD,Phase 1–2 test budget cap; scale only if CPA << margin,estimate,placeholder budget
+SHIPPING,overnight_customer_ship_charge_1plate,mid-zone overnight,USD_per_shipment,59,65,75,USD,HEADLINE: customer pays $65 mid-zone; dinner stays $20,estimate,shipping CSV pricing_rule
+SHIPPING,pack_plus_label_fulfill_mid_liner_cold,USPS PME mid Z4,USD_per_shipment,52,80.47,116,USD,Fully loaded fulfill (pack+media+labor+label) liner cold by zone,estimate,shipping CSV fulfill rows
+SHIPPING,profit_after_ship_mid_65_charge,1plate liner cold mid,USD_per_shipment,-1,4.53,16.58,USD,At $65 ship + $20 dinner mid ≈ +$4.53 total; food engine $16.30 inside menu,estimate,shipping summary
+SHIPPING,starter_overnight_kit_cost,Uline BOM starter,USD_per_kit,150,175,220,USD,~10 foam + gel case + heat packs + tape/labels,estimate,cogs capital row
+SHIPPING,plates_to_payback_insulated_inventory,local contrib path,plates,7,8,10,count,$120 shippers / $16.30 ≈ 8 local plates OR ~10 paid ship orders,calculated,inventory payback
+COGS_PROFIT,plate_cogs_fried_chicken_dinner,Soul Food Pop $20,USD_per_plate,2.9,3.7,5.2,USD,Chicken+greens+sweets+roll+pack rollup,calculated,cogs CSV summary
+COGS_PROFIT,margin_pct_at_20,local pickup,pct,74.0,81.5,85.5,pct,($20−COGS)/$20; mid 81.5%,calculated,rollup
+COGS_PROFIT,margin_usd_at_20,local pickup,USD_per_plate,14.8,16.3,17.1,USD,Contribution at $20,calculated,rollup
+COGS_PROFIT,plate_club_effective_price,Plate Club half-off,USD_per_plate,10,10,10,USD,Member pays $10 on $20 dinner,calculated,subscription model
+COGS_PROFIT,plate_club_contrib_at_mid_cogs,Plate Club,USD_per_plate,4.8,6.3,7.1,USD,$10−$3.70 = $6.30 (63% margin) — still healthy,calculated,sub model
+COGS_PROFIT,rewards_cycle_avg_sell,buy5 get6th@$5,USD_per_plate_avg,17.5,17.5,17.5,USD,$105 / 6 plates = $17.50 avg,calculated,rewards
+COGS_PROFIT,rewards_cycle_profit_6plates,loyalty cycle,USD_per_cycle,70,82.8,90,USD,$105 − 6×$3.70 = $82.80; loyalty cost 12.5% of full $120,calculated,rewards
+COGS_PROFIT,depot_path_plate_cogs,Restaurant Depot,USD_per_plate,2.4,2.6,2.8,USD,Preferred wholesale path (older $15 plate model band),calculated,cogs scenario
+COGS_PROFIT,walmart_path_plate_cogs,Walmart retail,USD_per_plate,2.9,3.35,3.8,USD,Workable but thinner vs Depot,calculated,cogs scenario
+ULINE_SUPPLIES,foam_shipper_1plate_unit,Uline S-11356-class,USD_each,8,12,64,USD,List ~$64/ctn; mid volume/alt ~$8–12/unit,sourced,Uline fetched 2026-09-22
+ULINE_SUPPLIES,foam_shipper_mealprep_unit,Uline S-13392-class,USD_each,9,12,37,USD,2–4 meal vessel; list ~$35–37,sourced,Uline 2026-09-22
+ULINE_SUPPLIES,thermal_liner_cool_shield,Uline S-16497,USD_each,2.16,2.44,2.44,USD,24hr liner; pair with corrugated box,sourced,Uline 2026-09-22
+ULINE_SUPPLIES,gel_pack_32oz,Uline S-14293,USD_each,1.5,1.67,1.8,USD,$15/9 case; use 2× for 1-plate cold,sourced,Uline 2026-09-22
+ULINE_SUPPLIES,gel_pack_16oz_single_use,Uline S-18253,USD_each,0.7,0.78,0.9,USD,$14/18; 3× for one-way cold,sourced,Uline 2026-09-22
+ULINE_SUPPLIES,heat_pack_uniheat_style,third-party + Uline vessel,USD_each,2.0,2.25,3.0,USD,2 packs typical hot overnight; ESTIMATE,estimate,market est 2026-09-22
+ULINE_SUPPLIES,tape_and_labels_per_ship,pack station,USD_per_shipment,0.5,1.0,2.0,USD,Tape + thermal/shipping label stock allocation,estimate,ops
+ULINE_SUPPLIES,starter_kit_total,10 foam + gels + heat + tape,USD_kit,150,175,220,USD,Capital to stand up overnight channel,estimate,BOM
+ULINE_SUPPLIES,reorder_point_foam_shippers,inventory,units_on_hand,5,8,10,count,Reorder when ≤8 shippers left (covers ~1 busy week),estimate,ops policy
+ULINE_SUPPLIES,reorder_point_gel_packs,inventory,units_on_hand,12,18,24,count,Reorder at ~2 weeks of mid ship volume,estimate,ops policy
+ULINE_SUPPLIES,reorder_point_heat_packs,inventory,units_on_hand,10,16,20,count,Hot-path media reorder trigger,estimate,ops policy
+BUSINESS_CREDIT,uline_net30_available,Uline,yes_no_flag,1,1,1,flag,Net-30 via Invoice Me at checkout for qualified businesses; reports D&B/Experian Business,sourced,Uline FAQ / Nav Jul 2026
+BUSINESS_CREDIT,uline_net30_prereq_ein,Uline,flag,1,1,1,flag,EIN + business/company account; D&B often reviewed; may request trade/bank refs — not legal advice,sourced,Nav Uline Net-30 2026
+BUSINESS_CREDIT,restaurant_depot_membership,Jetro/RD,USD_annual_est,0,0,50,USD,Membership docs: reseller permit/biz license; typically pay at purchase — no standard Net-30 advertised,sourced,ResolvePay / RD research 2026
+BUSINESS_CREDIT,webstaurant_credit_key_net30,WebstaurantStore / Credit Key,USD_credit_line,1000,10000,50000,USD,Credit Key Net-30 / installments; typical reqs FICO 600+ & ~$40k+ biz revenue — research estimate,sourced,Credit Key / Webstaurant 2026
+BUSINESS_CREDIT,sysco_usfoods_trade_credit,Sysco / US Foods later,flag,0,0,1,flag,Later-stage: distributor trade accounts often Net-7/14/30 after volume + refs — mark research estimate,estimate,industry norm 2026
+BUSINESS_CREDIT,office_depot_biz_cards,Office Depot / Staples biz,flag,0,1,1,flag,Business cards/accounts sometimes Net-30 after approval — research estimate,estimate,vendor research
+BUSINESS_CREDIT,square_capital_amex_blue,Square Capital / Amex Blue Business,USD_facility,500,5000,25000,USD,Working-capital products (not trade Net-30); underwriting varies — research estimate not offer,estimate,product category 2026
+BUSINESS_CREDIT,net30_cashflow_benefit_50plate_week,food+pack float,USD_cash_float,150,220,350,USD,Defer ~$185 food COGS + pack/shipper buys 30 days → improves cash for a 50-plate week,calculated,50*$3.70 + supplies buffer
+BUSINESS_CREDIT,application_prereqs_high_level,general trade credit,checklist,1,1,1,flag,"Typical: EIN, legal biz name, business bank account, DBA/seller permit, trade refs, sometimes D-U-N-S — not legal/financial advice",estimate,common underwriting
+MARKETPLACES,doordash_marketplace_commission,DoorDash Basic/Plus/Premier,pct_of_subtotal,15,25,30,pct,Published US delivery commissions 15/25/30%; pickup ~6%,sourced,merchants.doordash.com pricing 2026
+MARKETPLACES,doordash_fee_impact_20_plate_25pct,DoorDash Plus mid,USD_fee_and_net,5.0,11.3,11.3,USD,Fee $5 on $20; net after fee+mid COGS = $20−$5−$3.70 = $11.30 contrib (vs $16.30 local),calculated,25% of $20
+MARKETPLACES,doordash_fee_impact_20_plate_30pct,DoorDash Premier,USD_contrib_after,6.0,10.3,10.3,USD,Fee $6; contrib $20−$6−$3.70=$10.30,calculated,30% of $20
+MARKETPLACES,doordash_drive_flat_fee,DoorDash Drive On-Demand,USD_per_delivery,6.99,9.95,10.99,USD,Flat courier fee (no % commission); CA integrations often ~$9.95,sourced,DoorDash Drive / SpotOn CA 2026
+MARKETPLACES,doordash_storefront_online_ordering,DoorDash Online Ordering,pct_commission,0,0,0,pct,0% marketplace commission; processing ~2.9%+$0.30 (Boost/Pro),sourced,DoorDash merchant pricing 2026
+MARKETPLACES,grubhub_marketing_commission,Grubhub Marketplace,pct,5,15,25,pct,Marketing commission tiers ~5–20%+ (plan-dependent); +~10% delivery if GH fleet + processing ~3.05%+$0.30,sourced,RestoLabs/DirectOrders 2026
+MARKETPLACES,grubhub_fee_impact_20_plate_eff25,Grubhub blended est,USD_contrib_after,5.0,11.3,11.3,USD,Illustrative 25% effective take → same $11.30 mid contrib as DD 25%,estimate,blended model
+MARKETPLACES,ubereats_marketplace_commission,Uber Eats Lite/Plus/Premium,pct,20,25,30,pct,US Marketplace Fee bands (Mar 2026+ Lite 20%); pickup ~7% validated,sourced,Uber Help / merchants.ubereats.com 2026
+MARKETPLACES,ubereats_fee_impact_20_plate_25pct,Uber Eats Plus,USD_contrib_after,5.0,11.3,11.3,USD,$20−$5−$3.70=$11.30,calculated,25%
+MARKETPLACES,uber_direct_flat_fee,Uber Direct,USD_per_delivery,5.0,7.99,12.0,USD,Starts ~$7.99/delivery published; distance/market vary; no marketplace %,sourced,Uber Direct / FoodyOS Aug 2026
+MARKETPLACES,instacart_meal_kits_note,Instacart,flag,0,0,0,flag,Prepared meal kits rarely on Instacart consumer; Instacart Business more grocery supply-side — not primary plate channel,estimate,channel fit note 2026
+MARKETPLACES,toast_online_ordering,Toast Digital Storefront,USD_per_month_plus_proc,0,75,149,USD,Online ordering add-on often ~$75/mo + CNP processing (~3.5%+$0.15 cited); 0% marketplace commission on direct,sourced,Square compare / Sauce 2026
+MARKETPLACES,square_online_ordering,Square Online,pct_plus_cents,2.9,3.1,3.3,pct,Free plan 3.3%+$0.30 online; Plus 2.9%+$0.30; 0% platform commission,sourced,Square pricing 2026
+MARKETPLACES,square_fee_impact_20_plate,Square Online Free,USD_contrib_after,0.96,15.34,15.34,USD,Proc ~$0.96 on $20 Free tier; contrib $20−$0.96−$3.70=$15.34 — near local cash,calculated,3.3%*20+0.30
+MARKETPLACES,farmers_market_orgs_la,LA / SoCal markets,USD_booth_day,35,75,150,USD,Stall fees vary widely; TFF/permit separate — research local coordinators,estimate,market ops
+MARKETPLACES,ghost_kitchen_commissary_la,shared kitchen LA,USD_per_month,500,1200,2500,USD,Hourly/membership commissary bands; needed if MEHKO bars mail-order,estimate,LA shared kitchen market
+MARKETPLACES,marketplace_25pct_vs_local_delta,any 25% marketplace,USD_contrib_lost,0,5.0,5.0,USD,$16.30 local − $11.30 after 25% fee = $5.00 less per plate,calculated,delta
+LOCAL_DELIVERY,private_courier_sameday_fee,Roadie / local car-bike,USD_per_drop,8,14,25,USD,Quote-based by distance/size/urgency; SoCal meal drop estimate band,estimate,Roadie quote model + local courier norms 2026
+LOCAL_DELIVERY,restaurant_hire_driver_per_drop,W2/1099 courier hire,USD_per_drop,8,12,20,USD,Cash/labor per drop + tip culture; denser routes lower $/drop,estimate,ops labor model
+LOCAL_DELIVERY,doordash_drive_outsource_cost,DoorDash Drive,USD_per_drop,6.99,9.95,10.99,USD,Preferred outsource: flat fee CA mid ~$9.95; pass to customer,sourced,SpotOn/DoorDash Drive 2026
+LOCAL_DELIVERY,uber_direct_outsource_cost,Uber Direct,USD_per_drop,5.0,7.99,12.0,USD,White-label courier from own channel,sourced,Uber Direct published start $7.99
+LOCAL_DELIVERY,mandatory_customer_delivery_fee_flat,SoCal local delivery policy,USD_fee_charged,8,12,15,USD,RECOMMENDED flat $12 SoCal ≤~5–7 mi: covers Drive ~$10 + tip buffer + margin,estimate,policy recommendation
+LOCAL_DELIVERY,mandatory_fee_tier_near,0–3 miles,USD_fee,6,8,10,USD,Near-zone tier if distance pricing used,estimate,tier policy
+LOCAL_DELIVERY,mandatory_fee_tier_mid,3–7 miles,USD_fee,10,12,14,USD,Mid tier — default recommended band,estimate,tier policy
+LOCAL_DELIVERY,mandatory_fee_tier_far,7–12 miles,USD_fee,14,18,22,USD,Far local; consider refuse or overnight instead,estimate,tier policy
+LOCAL_DELIVERY,outsourced_labor_driver_pay_component,platform/driver,USD_per_drop,5,8,14,USD,Portion of fee that effectively pays driver/tip floor — estimate,estimate,Prop22/engaged-time context
+LOCAL_DELIVERY,uberx_lyft_passenger_as_courier_cost,UberX/Lyft rideshare misuse,USD_per_trip,8,15,28,USD,If Fifi pays passenger ride to drop plates — ToS RISK; cost often > Drive flat fee,estimate,rideshare fare SoCal short hops
+LOCAL_DELIVERY,uber_connect_package_style,Uber Connect,USD_per_drop,6,10,18,USD,Package product (not passenger UberX); still check food/perishable rules — prefer Direct/Drive for hot food,estimate,Connect fare band + policy flag
+LOCAL_DELIVERY,customer_arranged_rideshare,customer pays Uber to pickup,USD_customer,0,0,0,USD,Customer-arranged ride to pickup = $0 merchant delivery cost (pickup model),calculated,policy
+LOCAL_DELIVERY,net_contrib_local_deliv_absorb_995,absorb Drive $9.95,USD_contrib,6.35,6.35,6.35,USD,$20−$3.70−$9.95=$6.35 if merchant absorbs — weaker than passing fee,calculated,absorb model
+LOCAL_DELIVERY,net_contrib_local_deliv_pass_12fee,customer pays $12 fee,USD_contrib,16.3,16.3,16.3,USD,Menu $20 + fee $12; Drive $9.95 paid from fee → ~$2.05 fee margin + $16.30 food contrib,calculated,pass-through model
+LOCAL_DELIVERY,breakeven_local_vs_overnight,distance/economics,miles_or_flag,1,1,1,flag,Local Drive+pass fee beats overnight whenever customer is in delivery radius: keep $16.30 food vs ship total profit ~$4.53,calculated,compare channels
+LOCAL_DELIVERY,breakeven_courier_vs_marketplace25,order economics,USD_order_size,31.96,39.8,39.8,USD,Flat $9.95 Drive beats 25% commission when order > ~$39.80; at $20 plate marketplace takes less $ but still worse than pass-through Direct,calculated,9.95/0.25
+LOCAL_DELIVERY,policy_rideshare_tos_flag,UberX/Lyft passenger,flag,1,1,1,flag,FLAG: passenger rideshare ToS often restrict commercial goods/food delivery. Prefer Uber Direct / DoorDash Drive / licensed courier. Not legal advice.,sourced,Lyft ToS § commercialize/unaccompanied goods; Uber Connect prohibited perishables note
+SUMMARY_DASHBOARD,best_channel_net_usd,local cash/pickup,USD_contrib,16.3,16.3,16.3,USD,RANK 1: Local cash/card pickup — full $16.30 after mid COGS,calculated,dashboard
+SUMMARY_DASHBOARD,second_channel_local_delivery_passthru,Drive/Direct + customer fee,USD_contrib,14.0,16.3,16.3,USD,RANK 2: Own-channel order + flat courier + mandatory customer fee → preserves food margin,calculated,dashboard
+SUMMARY_DASHBOARD,third_channel_overnight_ship,overnight mid $65 paid,USD_total_profit,4.0,4.53,6.5,USD,RANK 3: Overnight viable but thin total $; food margin intact inside $20,estimate,dashboard
+SUMMARY_DASHBOARD,fourth_channel_marketplace_25pct,DD/UE/GH ~25%,USD_contrib,10.3,11.3,11.3,USD,RANK 4: Marketplace after ~25% fee — acquisition tool not primary profit,calculated,dashboard
+SUMMARY_DASHBOARD,worst_absorb_delivery_no_fee,absorb $10 courier,USD_contrib,6.0,6.35,6.35,USD,Avoid absorbing courier without raising price or charging fee,calculated,dashboard
+SUMMARY_DASHBOARD,channel_rank_rule,policy,text,1,1,1,flag,local cash > ship (national) > marketplace@25%; local delivery with mandatory fee ≈ local cash for in-radius,estimate,dashboard rule
+DEALS,happy_hour_spin_ev,safe prize table,USD_house_edge,0.3,0.44,0.5,USD,EV cost ~$0.56 on $1 → edge ~$0.44; counsel if pay-to-spin,estimate,deals CSV
+DEALS,trivia_promo_expected_cost,trivia code,USD_per_play,1.5,2.1,3.0,USD,$3 off @70% redeem ≈ $2.10; safer default,estimate,deals CSV
