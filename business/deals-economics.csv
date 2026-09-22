@@ -17,3 +17,5 @@ local_delivery,mandatory $12 delivery fee + $20 plate,32.0,covers Drive ~$9.95,p
 local_delivery,absorb Drive $9.95 no customer fee,20.0,merchant absorbs courier,per drop,13.649999999999999,20.0,6.35,Weaker — avoid unless promo test,calculated
 marketplace,DoorDash/UE 25% on $20 plate,20.0,25% commission,per order,8.7,20.0,11.3,Acquisition channel; $5 fee vs local,calculated
 summary,channel rank net $,16.3,local>deliv+fee>ship>mkt,priority,3.7,20.0,16.3,Best net after fees hierarchy,calculated
+marketplace,DoorDash premium $26 + bonus side,26.00,cake slice or cinnamon twist,per DD order,4.45,26.00,15.05,"Fee ~$6.50 + COGS $3.70 + bonus $0.75; net ~$15.05 vs pickup $16.30 — charge more give a lil more",calculated
+beverage,Future bottled house drink,4.50,own brand bottle,per bottle,1.50,4.50,3.00,Phase 3–4 after pop proven; attach to plates/DD/ship,estimate

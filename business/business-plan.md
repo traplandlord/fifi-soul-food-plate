@@ -315,3 +315,24 @@ Live conversion placeholder **2–5%**. Paid TikTok/Meta CPM/CPC bands in the CS
 **Local cash → local delivery + mandatory fee → overnight ship → marketplace @ ~25%.**
 
 *§11 added Sep 22, 2026. Verify current platform rates, ToS, and credit terms before launch.*
+
+
+---
+
+## 12. DoorDash premium pricing + bonus sides (and future bottled drinks)
+
+**Rule:** Never match the **$20 pickup** price on DoorDash / Uber Eats / Grubhub. List **higher** (target **$26**, band **$24–$28**) so the ~15–30% marketplace fee does not erase margin.
+
+**Give a lil more on the backend:** every marketplace bag includes a small sweet — **cake slice** or **cinnamon twist** (COGS ~**$0.40–$1.25**, plan mid **~$0.75**). Customers feel the value; you still land near pickup economics.
+
+| Channel | Menu price | Fee (ex. 25%) | Plate COGS | Bonus side | Approx. contribution |
+|---------|------------|---------------|------------|------------|----------------------|
+| Pickup / pop | $20 | $0 | $3.70 | — | **~$16.30** |
+| DoorDash (match $20) | $20 | $5.00 | $3.70 | — | **~$11.30** (weak) |
+| DoorDash premium + bonus | $26 | $6.50 | $3.70 | $0.75 | **~$15.05** (strong) |
+
+**Messaging:** “DoorDash exclusive — includes a sweet on the side.” Pickup stays the deal for locals who come through.
+
+**Future — bottle our own beverages:** After Phase 1–2 are stable (sold-out pops + ship/live working), develop a house bottled drink (tea / punch / agua-fresca style). Placeholder retail **~$3–$6**, COGS **~$0.80–$2.50**, attach to local, DD, and ship. Do not let bottling distract from nailing the $20 dinner first.
+
+*Numbers mid estimates — update in `fifi-comprehensive-metrics.csv` when recipes lock.*

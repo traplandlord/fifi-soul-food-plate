@@ -129,3 +129,19 @@ COGS_PROFIT,food_only_cogs_approx,ex-pack,USD_per_plate,2.25,3.0,4.2,USD,Approx 
 SHIPPING,four_meal_prep_ship_mid_profit,4-meal cold mid,USD_per_shipment,10,15.52,35,USD,Best ship unit economics: 4 meals share foam/label,estimate,shipping CSV
 MARKETPLACES,instacart_business_supply,grocery procurement,flag,0,1,1,flag,Optional: Instacart for ingredient supply convenience — not plate marketplace,estimate,channel note
 BUSINESS_CREDIT,how_net30_helps_50plate,cash timing,days_float,14,30,30,days,Buy Monday ingredients; collect Tue–Sun cash; pay supplier day 30 — float covers weekly ops,calculated,cash cycle
+highlight,H16_doordash_premium_menu_price,DoorDash channel,USD_per_plate,24,26,28,USD,"Charge $26 mid on DD (vs $20 pickup) to cover ~25% fee + fund bonus side",calculated,strategy 2026-09-22
+highlight,H17_doordash_bonus_side_cogs,cake slice or cinnamon twist,USD_per_plate,0.4,0.75,1.25,USD,Lil more on the backend — bonus sweet side COGS band,estimate,strategy 2026-09-22
+highlight,H18_doordash_premium_net_vs_pickup,DoorDash $26 + bonus,USD_contrib,14.0,15.8,17.5,USD,"$26−25% fee($6.50)−COGS$3.70−bonus$0.75 ≈ $15.05; near local $16.30",calculated,strategy 2026-09-22
+MARKETPLACES,doordash_menu_price_premium,DoorDash Storefront/Plus,USD_per_plate,24,26,28,USD,List higher on-app than $20 pickup; message value + bonus side,estimate,channel strategy 2026-09-22
+MARKETPLACES,doordash_fee_at_26,DoorDash 25% on $26,USD_fee,5.2,6.5,7.8,USD,25% of $26 = $6.50 mid,calculated,0.25*26
+MARKETPLACES,doordash_contrib_26_no_bonus,DoorDash after fee+COGS,USD_contrib,12.7,15.8,17.1,USD,$26−$6.50−$3.70 = $15.80 before bonus side,calculated,strategy
+MARKETPLACES,doordash_bonus_cake_slice_cogs,backend sweet,USD_per_serving,0.35,0.65,1.0,USD,Single cake slice add-in; bakery or scratch,estimate,menu R&D
+MARKETPLACES,doordash_bonus_cinnamon_twist_cogs,backend sweet,USD_per_serving,0.3,0.55,0.9,USD,Cinnamon twist / roll bite as DD bag sweetener,estimate,menu R&D
+MARKETPLACES,doordash_contrib_26_with_bonus_mid,DoorDash $26 + twist/cake,USD_contrib,14.5,15.05,16.5,USD,$15.80 − $0.75 bonus ≈ $15.05 — competitive with pickup perceived value,calculated,strategy
+MARKETPLACES,doordash_vs_pickup_price_gap,channel pricing,USD_delta,4,6,8,USD,Pickup stays $20; DD shows $24–$28 so fee is not eaten by margin,calculated,strategy
+MARKETPLACES,strategy_rule_dd_premium_plus_bonus,policy,flag,1,1,1,flag,NEVER match pickup price on DD. Charge more + include lil cake slice or cinnamon twist. Pickup remains best margin.,calculated,strategy 2026-09-22
+BEVERAGES,future_bottled_house_drink,own brand later,USD_retail,3,4.5,6,USD,Phase 3–4: bottle house beverage (tea/punch/agua fresca style); margin TBD after co-pack,estimate,roadmap beverage
+BEVERAGES,future_bottled_cogs_estimate,co-pack / self bottle,USD_per_bottle,0.8,1.5,2.5,USD,Placeholder until recipe + packaging (bottle/label/Uline ship),estimate,R&D
+BEVERAGES,future_bottled_contrib_mid,own beverage,USD_per_bottle,2.0,3.0,4.0,USD,At $4.50 retail − $1.50 COGS ≈ $3; attach to DD/local/ship,estimate,R&D
+BEVERAGES,when_to_launch_bottled,roadmap phase,phase,3,3,4,flag,After Plate Club stable + kitchen path; do not distract Phase 1 pop,estimate,plan timing
+ROADMAP,phase3_bonus_sides_on_marketplace,cake/twist,flag,1,1,1,flag,Standardize DD/UE/GH bag insert: cake slice OR cinnamon twist when charging premium menu price,estimate,strategy
