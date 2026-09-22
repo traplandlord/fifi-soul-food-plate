@@ -1,0 +1,15 @@
+category,mechanic,customer_pays_usd,discount_or_prize,probability_or_frequency,expected_cost_usd,expected_revenue_usd,expected_margin_usd,notes,confidence
+happy_hour,$1 spin wheel (safe table),1.00,mixed prizes see notes,per spin,0.56,1.00,0.44,50% none; 25% bite $0.30; 15% drink $0.45; 8% $5 off @70% redeem; 1.5% 50% off @80% redeem; 0.5% free dinner $3.50 COGS. Optimal in happy hour window.,estimate
+happy_hour,free spin with plate purchase,0.00,same table as marketing,1 per paid plate HH,0.56,0.00,-0.56,Safer framing: spin is free with $20 plate; EV $0.56 CAC against $16.30 contribution → still +$15.74,estimate
+happy_hour,trivia for promo code,0.00,$3 off code,correct answer,2.10,0.00,-2.10,Lower legal risk; $3 off only if redeemed on plate (assume 70% → $2.10). Still leaves ~$14 contrib.,estimate
+subscription,Plate Club half-off,10.00,50% off $20 dinner,per plate / member,3.70,10.00,6.30,Weekly or monthly plate counts; churn placeholder 8%/mo; ship extra,calculated
+subscription,Plate Club 4 plates/mo local,40.00,4 half-off plates,monthly,14.80,40.00,25.20,Retention engine Phase 3,calculated
+rewards,buy 5 get 6th at 75% off,105.00,6th plate $5,every 6 plates,22.20,105.00,82.80,Loyalty cost 12.5% of $120 full-price revenue; effective avg $17.50,calculated
+tiktok_live,limited drop + optional tip jar,20.00,scarce inventory drop,2-5% viewer convert ASSUMPTION,3.70,20.00,16.30,Tip jar optional; call out ship cutoff on stream; no deep ads research,estimate
+tiktok_live,50-plate live pop preorder,1000.00,sold out pop,per live event,185.00,1000.00,815.00,Local/pop economics amplified by live,calculated
+summary,local contrib $20,20.00,none,per plate,3.70,20.00,16.30,Baseline,calculated
+summary,ship mid $65 + $20,85.00,overnight liner cold,per 1-plate ship,80.47,85.00,4.53,Fully loaded mid-zone,estimate
+summary,spin EV house edge,1.00,safe table,per spin,0.56,1.00,0.44,Positive house edge,estimate
+summary,sub plate margin,10.00,50% off,per plate,3.70,10.00,6.30,63% margin,calculated
+summary,rewards 6-pack effective,105.00,12.5% loyalty cost,per 6 plates,22.20,105.00,82.80,Avg $17.50,calculated
+summary,insulated inventory payback,,10 shippers $120,one-time,120.00,,,~8 local plates or ~10 ship orders to pay inventory,calculated
