@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="Collard greens">
+  <ellipse cx="40" cy="42" rx="24" ry="18" fill="#3d5c3a"/>
+  <path d="M20 40 Q40 28 60 42 Q40 52 20 40" fill="#4a7045"/>
+  <path d="M28 38 Q40 32 52 40" fill="none" stroke="#2d4a2a" stroke-width="1.5"/>
+  <path d="M32 44 Q40 40 48 45" fill="none" stroke="#2d4a2a" stroke-width="1"/>
+</svg>

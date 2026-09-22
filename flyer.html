@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Soul Food Pop — Fifi's Soul Food Plate. Fried Chicken Dinner $20. Only 50 plates." />
+  <title>Soul Food Pop · Fifi's Soul Food Plate</title>
+  <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml" />
+  <style>
+    :root {
+      --brown: #3c2415;
+      --brown-mid: #5c3a21;
+      --cream: #faf6f0;
+      --cream-warm: #f5e6d3;
+      --orange: #c4783a;
+      --gold: #d4a017;
+      --gold-soft: #e8c547;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: #1a0f0a;
+      color: var(--brown);
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      background:
+        radial-gradient(ellipse at 50% 0%, #4a2e1a 0%, #1a0f0a 70%);
+    }
+    .phone {
+      width: 100%;
+      max-width: 420px;
+      min-height: 100vh;
+      min-height: 100dvh;
+      background: var(--cream);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .phone::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 1px 1px, rgba(196, 120, 58, 0.08) 1px, transparent 0);
+      background-size: 18px 18px;
+      pointer-events: none;
+    }
+    .inner {
+      position: relative;
+      z-index: 1;
+      padding: 1.75rem 1.4rem 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .top-bar {
+      text-align: center;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--orange);
+      margin-bottom: 0.85rem;
+    }
+    .logo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+    }
+    .logo-wrap img {
+      width: 64px;
+      height: 64px;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      text-align: center;
+      font-size: 1.85rem;
+      line-height: 1.15;
+      margin: 0 0 0.35rem;
+      color: var(--brown);
+    }
+    .event {
+      text-align: center;
+      font-family: Georgia, serif;
+      font-style: italic;
+      color: var(--brown-mid);
+      font-size: 1.1rem;
+      margin: 0 0 1rem;
+    }
+    .price-burst {
+      margin: 0.5rem auto 1.25rem;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, var(--brown) 0%, var(--brown-mid) 100%);
+      color: var(--cream-warm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow:
+        0 0 0 6px rgba(212, 160, 23, 0.35),
+        0 12px 28px rgba(60, 36, 21, 0.25);
+    }
+    .price-burst .dollars {
+      font-family: Georgia, serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--gold-soft);
+    }
+    .price-burst .label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+      opacity: 0.9;
+    }
+    .dish-name {
+      text-align: center;
+      font-family: Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+      color: var(--brown);
+    }
+    .checklist {
+      list-style: none;
+      margin: 0 auto 1.35rem;
+      padding: 1rem 1.15rem;
+      max-width: 300px;
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid rgba(60, 36, 21, 0.08);
+      box-shadow: 0 6px 20px rgba(60, 36, 21, 0.08);
+    }
+    .checklist li {
+      padding: 0.45rem 0 0.45rem 1.6rem;
+      position: relative;
+      font-size: 0.98rem;
+      border-bottom: 1px solid rgba(60, 36, 21, 0.06);
+      color: var(--brown-mid);
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--orange);
+      font-weight: 700;
+    }
+    .limit {
+      text-align: center;
+      background: linear-gradient(90deg, var(--orange), var(--gold));
+      color: #fff;
+      font-weight: 700;
+      padding: 0.65rem 1rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      margin: 0 auto 1.25rem;
+      max-width: 280px;
+      box-shadow: 0 4px 14px rgba(196, 120, 58, 0.35);
+    }
+    .details {
+      background: var(--brown);
+      color: var(--cream-warm);
+      border-radius: 14px;
+      padding: 1rem 1.15rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.92rem;
+    }
+    .details dt {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      margin-top: 0.55rem;
+    }
+    .details dt:first-child { margin-top: 0; }
+    .details dd {
+      margin: 0.15rem 0 0;
+      font-weight: 600;
+      font-size: 1.02rem;
+    }
+    .urgency {
+      text-align: center;
+      font-family: Georgia, serif;
+      font-style: italic;
+      color: var(--brown-mid);
+      margin: 0 0 1.25rem;
+      font-size: 1rem;
+    }
+    .cta {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      background: var(--orange);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 1rem 1.25rem;
+      border-radius: 999px;
+      box-shadow: 0 6px 18px rgba(196, 120, 58, 0.4);
+      margin-top: auto;
+    }
+    .cta:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+    .cta:hover { background: #a05a28; }
+    .fine {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #8b6914;
+      margin: 0.85rem 0 0;
+    }
+    .feat-badge {
+      text-align: center;
+      margin: 0 auto 1rem;
+      max-width: 320px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #3c2415;
+      background: linear-gradient(90deg, #ffe566, #e8c547, #c4783a);
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+      box-shadow: 0 0 14px rgba(255, 229, 102, 0.45);
+    }
+    .flourish {
+      width: 120px;
+      margin: 0.35rem auto 0.75rem;
+      opacity: 0.8;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <article class="phone" id="flyer">
+    <div class="inner">
+      <div class="top-bar" id="f-event-top">Soul Food Pop</div>
+      <div class="logo-wrap">
+        <img src="assets/logo-mark.svg" alt="" width="64" height="64" />
+      </div>
+      <h1 id="f-brand">Fifi's Soul Food Plate</h1>
+      <p class="event" id="f-event">Soul Food Pop</p>
+      <img class="flourish" src="assets/flourish.svg" alt="" />
+
+      <div class="price-burst" aria-label="Twenty dollars">
+        <span class="dollars" id="f-price">$20</span>
+        <span class="label">per dinner</span>
+      </div>
+
+      <h2 class="dish-name" id="f-dish">Fried Chicken Dinner</h2>
+
+      <ul class="checklist" id="f-includes">
+        <li>2 pieces crispy fried chicken</li>
+        <li>Collard greens</li>
+        <li>Candied sweet potatoes</li>
+        <li>Dinner roll</li>
+      </ul>
+
+      <div class="limit" id="f-limit">Only 50 plates available</div>
+      <div class="feat-badge">Happy Hour · Plate Club · Rewards</div>
+
+      <dl class="details">
+        <dt>Pickup location</dt>
+        <dd id="f-location">[Location]</dd>
+        <dt>Date</dt>
+        <dd id="f-date">[Date]</dd>
+        <dt>Time</dt>
+        <dd id="f-time">[Time]</dd>
+      </dl>
+
+      <p class="urgency">Pre-orders recommended — plates are limited.</p>
+
+      <a class="cta" href="index.html#order">Pre-order on the site</a>
+      <p class="fine">Home-cooked with love · Edit details in config.js</p>
+    </div>
+  </article>
+
+  <script src="config.js"></script>
+  <script>
+    (function () {
+      var C = window.FIFI_CONFIG;
+      if (!C) return;
+      function set(id, t) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = t;
+      }
+      set("f-brand", C.businessName);
+      set("f-event", C.eventName || "Soul Food Pop");
+      set("f-event-top", C.eventName || "Soul Food Pop");
+      set("f-location", C.pickupLocation || "[Location]");
+      set("f-date", C.eventDate || "[Date]");
+      set("f-time", C.eventTime || "[Time]");
+      set("f-limit", "Only " + (C.maxPlates || 50) + " plates available");
+      var plate = (C.menu || []).find(function (m) { return m.category === "plates"; });
+      if (plate) {
+        set("f-dish", plate.name);
+        set("f-price", "$" + Number(plate.price).toFixed(0));
+        if (plate.includes && plate.includes.length) {
+          var ul = document.getElementById("f-includes");
+          ul.innerHTML = plate.includes
+            .map(function (x) {
+              return "<li>" + x.replace(/</g, "&lt;") + "</li>";
+            })
+            .join("");
+        }
+      }
+      document.title = (C.eventName || "Soul Food Pop") + " · " + C.businessName;
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="Fried chicken">
+  <ellipse cx="40" cy="44" rx="22" ry="18" fill="#c4783a" stroke="#8b4513" stroke-width="1.5"/>
+  <ellipse cx="48" cy="36" rx="10" ry="8" fill="#d4894a"/>
+  <ellipse cx="52" cy="32" rx="5" ry="4" fill="#e8a05c"/>
+  <path d="M22 40 Q18 30 28 28" fill="none" stroke="#8b4513" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="35" cy="42" r="2" fill="#a0522d" opacity="0.4"/>
+  <circle cx="45" cy="48" r="1.5" fill="#a0522d" opacity="0.4"/>
+</svg>

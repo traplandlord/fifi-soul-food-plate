@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Soul Food Pop by Fifi's Soul Food Plate — Fried Chicken Dinner $20. Only 50 plates. Pre-order recommended." />
+  <title>Fifi's Soul Food Plate — Soul Food Pop · Fried Chicken Dinner $20</title>
+  <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="pattern-bg">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#home">
+        <img src="assets/logo-mark.svg" alt="" width="42" height="42" />
+        <span class="brand-text">
+          <span class="brand-name" id="brand-name">Fifi's Soul Food Plate</span>
+          <span class="brand-tag" id="brand-tag">Soul Food Pop · Home-cooked dinners</span>
+        </span>
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nav-desktop">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#happy-hour">Happy Hour</a></li>
+          <li><a href="#club">Club</a></li>
+          <li><a href="#live-drop">Live</a></li>
+          <li><a href="#order">Order</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="cart-btn" id="cart-open-btn" aria-haspopup="dialog" aria-controls="cart-drawer" aria-expanded="false">
+          <span aria-hidden="true">🛒</span>
+          Cart
+          <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+        </button>
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-mobile">
+          Menu
+        </button>
+      </div>
+    </div>
+    <ul class="nav-mobile" id="nav-mobile" hidden>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#happy-hour">Happy Hour</a></li>
+      <li><a href="#club">Plate Club</a></li>
+      <li><a href="#rewards">Rewards</a></li>
+      <li><a href="#live-drop">Live Drop</a></li>
+      <li><a href="#journey">The Journey</a></li>
+      <li><a href="#order">Order</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </header>
+
+  <div class="limited-banner" id="limited-banner" role="status" aria-live="polite">
+    <strong id="banner-event">Soul Food Pop</strong>
+    <span aria-hidden="true"> · </span>
+    <span>Fried Chicken Dinner <strong>$20</strong></span>
+    <span aria-hidden="true"> · </span>
+    <span id="banner-left">Only 50 plates</span>
+    <span aria-hidden="true"> · </span>
+    <span>Pre-orders recommended</span>
+  </div>
+
+  <div class="hh-banner" id="hh-banner" hidden role="status">
+    <span class="hh-neon" aria-hidden="true">✦</span>
+    <strong>Happy Hour is ON</strong>
+    <span aria-hidden="true"> · </span>
+    <span>Spin the Wheel · Trivia · Win free drinks &amp; dinner deals</span>
+    <a class="hh-banner-link" href="#happy-hour">Play now</a>
+    <button type="button" class="hh-demo-toggle" id="hh-demo-toggle" title="Force Happy Hour for Mom demos">Demo Happy Hour</button>
+  </div>
+
+  <main id="main">
+    <!-- HOME -->
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div>
+          <span class="hero-kicker" id="hero-kicker">Soul Food Pop · Black-owned · Home-cooked</span>
+          <h1 id="hero-title">Fifi's Soul Food Plate</h1>
+          <p class="hero-tagline" id="hero-tagline">Soul Food Pop · Home-cooked dinners</p>
+          <p class="hero-desc" id="hero-desc">
+            Fried Chicken Dinner — <strong>$20</strong>. Two pieces crispy fried chicken, collard greens, candied sweet potatoes, and a dinner roll. Only <strong>50 plates</strong> — pre-order recommended.
+          </p>
+          <p class="hero-event-meta" id="hero-event-meta"></p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#order">Pre-order now</a>
+            <a class="btn btn-secondary" href="#menu">See the menu</a>
+          </div>
+          <p class="event-details" id="event-details" style="margin-top:1rem;font-size:0.95rem;color:var(--muted);">
+            📍 Pickup: <span id="cfg-pickup">[Location]</span> ·
+            📅 <span id="cfg-date">[Date]</span> ·
+            ⏰ <span id="cfg-time">[Time]</span>
+          </p>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-plate-card">
+            <img src="assets/plate.svg" alt="Illustrated soul food plate with fried chicken dinner" />
+            <span class="hero-badge" id="hero-badge">$20</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="section" id="menu" aria-labelledby="menu-heading">
+      <div class="section-inner">
+        <header class="section-header">
+          <h2 id="menu-heading">The Menu</h2>
+          <p id="menu-intro">Soul Food Pop special — Fried Chicken Dinner $20. Limited to 50 plates.</p>
+          <img class="flourish" src="assets/flourish.svg" alt="" />
+        </header>
+
+        <div class="menu-block">
+          <h3 class="category-label">Plates</h3>
+          <div class="menu-grid plates" id="menu-plates"></div>
+        </div>
+
+        <div class="menu-block">
+          <h3 class="category-label">Drinks</h3>
+          <div class="menu-grid drinks" id="menu-drinks"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how" aria-labelledby="how-heading" style="background: linear-gradient(180deg, transparent, rgba(232,212,184,0.35), transparent);">
+      <div class="section-inner">
+        <header class="section-header">
+          <h2 id="how-heading">How it works</h2>
+          <p>No app download. No account. Just order, send, and pick up.</p>
+          <img class="flourish" src="assets/flourish.svg" alt="" />
+        </header>
+        <div class="steps">
+          <article class="step-card">
+            <span class="step-num">1</span>
+            <h3>Build your plate</h3>
+            <p>Grab a Fried Chicken Dinner ($20), add a drink if you like, and drop it in your cart.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-num">2</span>
+            <h3>Checkout &amp; send</h3>
+            <p>Enter your name and pickup preference, then text or email your order straight to us.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-num">3</span>
+            <h3>Pick up hot</h3>
+            <p>We'll confirm. Pick up at the Soul Food Pop — date, time &amp; location in the details.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORDER -->
+    <section class="section" id="order" aria-labelledby="order-heading">
+      <div class="section-inner">
+        <header class="section-header">
+          <h2 id="order-heading">Order</h2>
+          <p>Review your cart, confirm pickup details, then send your order. <span id="order-plates-left"></span></p>
+          <img class="flourish" src="assets/flourish.svg" alt="" />
+        </header>
+
+        <!-- Confirmation (shown after place order) -->
+        <div class="confirm-panel panel" id="confirm-panel" role="status" aria-live="polite">
+          <div class="confirm-icon" aria-hidden="true">✓</div>
+          <h2>Order ready to send</h2>
+          <p class="order-number" id="confirm-order-number">Order #—</p>
+          <div class="confirm-meta" id="confirm-customer"></div>
+          <ul class="cart-lines" id="confirm-lines"></ul>
+          <div class="cart-totals" id="confirm-totals"></div>
+          <p class="tax-note" id="confirm-tax-note"></p>
+          <p style="font-size:0.9rem;color:var(--muted);text-align:center;">
+            Use a button below to send this order to Fifi. Nothing is submitted to a server — your phone or email app opens with the order filled in.
+          </p>
+          <div class="confirm-actions">
+            <a class="btn btn-primary" id="btn-sms" href="#">Text this order</a>
+            <a class="btn btn-ghost" id="btn-email" href="#">Email this order</a>
+            <button type="button" class="btn btn-secondary" id="btn-copy" style="border-color:var(--cream-dark);color:var(--brown-deep);background:var(--cream);">
+              Copy order
+            </button>
+            <button type="button" class="btn btn-sm" id="btn-new-order" style="background:transparent;color:var(--muted);margin-top:0.5rem;">
+              Start a new order
+            </button>
+          </div>
+        </div>
+
+        <div class="order-layout" id="checkout-view">
+          <div class="panel" id="order-summary-panel">
+            <h3>Your cart</h3>
+            <div id="order-cart-body">
+              <p class="cart-empty">Your cart is empty. <a href="#menu">Browse the menu</a>.</p>
+            </div>
+            <div class="cart-perks" id="cart-perks"></div>
+          </div>
+
+          <div class="panel">
+            <h3>Checkout details</h3>
+            <form id="checkout-form" novalidate>
+              <div class="form-group">
+                <label class="required" for="cust-name">Name</label>
+                <input type="text" id="cust-name" name="name" autocomplete="name" required maxlength="80" />
+                <span class="error-msg" id="err-name">Please enter your name.</span>
+              </div>
+              <div class="form-row two">
+                <div class="form-group">
+                  <label class="required" for="cust-phone">Phone</label>
+                  <input type="tel" id="cust-phone" name="phone" autocomplete="tel" required maxlength="30" />
+                  <span class="error-msg" id="err-phone">Please enter a phone number.</span>
+                </div>
+                <div class="form-group">
+                  <label class="required" for="cust-email">Email</label>
+                  <input type="email" id="cust-email" name="email" autocomplete="email" required maxlength="120" />
+                  <span class="error-msg" id="err-email">Please enter a valid email.</span>
+                </div>
+              </div>
+              <div class="form-row two">
+                <div class="form-group">
+                  <label for="pickup-date">Preferred pickup date</label>
+                  <input type="date" id="pickup-date" name="pickupDate" />
+                </div>
+                <div class="form-group">
+                  <label for="pickup-time">Preferred time</label>
+                  <input type="time" id="pickup-time" name="pickupTime" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="market-note">Market / pickup note</label>
+                <input type="text" id="market-note" name="marketNote" maxlength="200" placeholder="e.g. Saturday farmers market booth" />
+                <p class="form-hint" id="pickup-hint"></p>
+              </div>
+              <fieldset class="form-group fulfill-fieldset">
+                <legend>Fulfillment</legend>
+                <div class="radio-stack" id="fulfill-options">
+                  <label class="radio-card">
+                    <input type="radio" name="fulfillment" value="pickup" checked />
+                    <span><strong>Pickup</strong><small>Soul Food Pop booth</small></span>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="fulfillment" value="overnight-cold" />
+                    <span><strong>Overnight cold</strong><small id="opt-ship-cold">+$28 · Uline insulated</small></span>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="fulfillment" value="overnight-hot" />
+                    <span><strong>Overnight hot</strong><small id="opt-ship-hot">+$35 · Uline insulated</small></span>
+                  </label>
+                </div>
+                <p class="form-hint" id="ship-hint" hidden>Packed hot or cold in insulated Uline shippers for next-day delivery.</p>
+              </fieldset>
+              <div class="form-group">
+                <label for="special-requests">Special requests</label>
+                <textarea id="special-requests" name="specialRequests" rows="3" maxlength="400" placeholder="Allergies, extra napkins, etc."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block" id="place-order-btn">
+                Place order
+              </button>
+              <p class="form-hint" style="margin-top:0.75rem;text-align:center;">
+                Next you'll get an order number and buttons to text, email, or copy your order.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- HAPPY HOUR -->
+    <section class="section hh-section" id="happy-hour" aria-labelledby="hh-heading">
+      <div class="section-inner">
+        <header class="section-header">
+          <p class="hh-kicker"><span class="hh-neon">✦</span> Happy Hour Games</p>
+          <h2 id="hh-heading">Spin · Trivia · Win</h2>
+          <p id="hh-window-copy">Weekdays <span id="hh-hours-label">3–6 PM</span> local — or hit <strong>Demo Happy Hour</strong> anytime for Mom previews.</p>
+          <img class="flourish" src="assets/flourish.svg" alt="" />
+        </header>
+
+        <div class="hh-status-row">
+          <span class="hh-status-pill" id="hh-status-pill">Off hours</span>
+          <button type="button" class="btn btn-secondary btn-sm" id="hh-demo-btn">Demo Happy Hour</button>
+          <p class="hh-demo-note">Demo — connect Square/Stripe later for real $1 spins.</p>
+        </div>
+
+        <div class="hh-tabs" role="tablist" aria-label="Happy Hour games">
+          <button type="button" class="hh-tab active" role="tab" id="tab-wheel" aria-selected="true" aria-controls="panel-wheel">Spin the Wheel</button>
+          <button type="button" class="hh-tab" role="tab" id="tab-trivia" aria-selected="false" aria-controls="panel-trivia">Trivia</button>
+        </div>
+
+        <div class="hh-panels">
+          <div class="hh-panel active" id="panel-wheel" role="tabpanel" aria-labelledby="tab-wheel">
+            <div class="wheel-layout">
+              <div class="wheel-stage">
+                <div class="wheel-pointer" aria-hidden="true">▼</div>
+                <div class="wheel-wrap" id="wheel-wrap">
+                  <canvas id="prize-wheel" width="320" height="320" aria-label="Prize wheel"></canvas>
+                </div>
+              </div>
+              <div class="wheel-controls">
+                <p class="wheel-prize-list" id="wheel-prize-list"></p>
+                <button type="button" class="btn btn-primary btn-block" id="btn-pay-spin">Pay $1 to spin</button>
+                <p class="form-hint" id="spin-unlock-note">Simulated payment unlocks one spin. A $1 “Happy Hour Spin” line is added to your cart.</p>
+                <button type="button" class="btn btn-secondary btn-block" id="btn-spin" disabled>Spin!</button>
+                <p class="wheel-result" id="wheel-result" aria-live="polite"></p>
+                <div class="active-codes" id="active-codes"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hh-panel" id="panel-trivia" role="tabpanel" aria-labelledby="tab-trivia" hidden>
+            <div class="trivia-card" id="trivia-card">
+              <p class="trivia-progress" id="trivia-progress">Question 1 of 3</p>
+              <h3 id="trivia-q">Loading…</h3>
+              <div class="trivia-choices" id="trivia-choices"></div>
+              <p class="trivia-feedback" id="trivia-feedback" aria-live="polite"></p>
+              <button type="button" class="btn btn-secondary btn-sm" id="trivia-next" hidden>Next question</button>
+              <button type="button" class="btn btn-primary" id="trivia-free-spin" hidden>Claim free prize spin</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATE CLUB + REWARDS -->
+    <section class="section" id="club" aria-labelledby="club-heading" style="background: linear-gradient(180deg, transparent, rgba(232,212,184,0.35), transparent);">
+      <div class="section-inner">
+        <div class="loyalty-grid">
+          <article class="loyalty-card plate-club-card">
+            <header class="section-header" style="margin-bottom:1rem;">
+              <h2 id="club-heading">Plate Club</h2>
+              <p>Half off every dinner while you’re subscribed.</p>
+            </header>
+            <p class="club-price"><span id="club-price-label">$9.99</span><span class="per">/mo</span> <span class="club-placeholder">(placeholder)</span></p>
+            <p class="club-explain">Plate Club members get <strong>50% off</strong> every Fried Chicken Dinner. Demo toggle — no real billing yet.</p>
+            <label class="toggle-row">
+              <input type="checkbox" id="plate-club-toggle" />
+              <span>I'm a Plate Club member (demo)</span>
+            </label>
+            <p class="club-active-note" id="club-active-note" hidden>✓ Half-off plates applied in cart</p>
+          </article>
+
+          <article class="loyalty-card rewards-card" id="rewards">
+            <header class="section-header" style="margin-bottom:1rem;">
+              <h2 id="rewards-heading">Rewards</h2>
+              <p>Stamp card — every 5 full-price plates unlocks 75% off the next.</p>
+            </header>
+            <div class="stamp-card" id="stamp-card" aria-label="Rewards progress">
+              <div class="stamps" id="stamps-row"></div>
+              <p class="stamp-progress" id="stamp-progress">0 / 5 toward 75% off plate</p>
+            </div>
+            <p class="rewards-explain">Pay full price on dinners to earn stamps. After 5, your next plate is <strong>75% off</strong> (pay $5 on $20).</p>
+            <p class="rewards-unlock" id="rewards-unlock" hidden>🎉 Next plate unlocked at 75% off!</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIKTOK LIVE / OVERNIGHT -->
+    <section class="section live-section" id="live-drop" aria-labelledby="live-heading">
+      <div class="section-inner">
+        <header class="section-header">
+          <p class="hh-kicker">TikTok Live</p>
+          <h2 id="live-heading">Tonight's Live Drop</h2>
+          <p>Catch the drop, then pickup — or ship overnight in insulated Uline packaging.</p>
+          <img class="flourish" src="assets/flourish.svg" alt="" />
+        </header>
+        <div class="live-card">
+          <div class="live-countdown-wrap">
+            <span class="live-badge">LIVE SOON</span>
+            <p class="live-time-label" id="live-time-label">Tonight · 7:00 PM PT</p>
+            <p class="countdown" id="live-countdown" aria-live="polite">--:--:--</p>
+            <a class="btn btn-primary" id="live-cta" href="#" target="_blank" rel="noopener noreferrer">Watch on TikTok</a>
+          </div>
+          <div class="live-ship-teaser">
+            <h3>Ship Overnight</h3>
+            <p id="ship-copy-teaser">Packed hot or cold in insulated Uline shippers for next-day delivery.</p>
+            <p class="ship-prices"><span id="ship-cold-price">Cold $28</span> · <span id="ship-hot-price">Hot $35</span></p>
+            <a class="btn btn-secondary btn-sm" href="#order">Choose at checkout</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- THE JOURNEY -->
+    <section class="section journey-section" id="journey" aria-labelledby="journey-heading">
+      <div class="section-inner">
+        <header class="section-header">
+          <p class="hh-kicker">Building something real</p>
+          <h2 id="journey-heading">The Journey</h2>
+          <p>From pop-up plates to a kitchen of our own — every order fuels the next step.</p>
+          <img class="flourish" src="assets/flourish.svg" alt="" />
+        </header>
+        <ol class="journey-roadmap">
+          <li class="journey-step is-now">
+            <span class="journey-dot" aria-hidden="true">1</span>
+            <strong>Pop-up</strong>
+            <span>Soul Food Pop · 50 plates</span>
+          </li>
+          <li class="journey-step">
+            <span class="journey-dot" aria-hidden="true">2</span>
+            <strong>Ship nationwide</strong>
+            <span>Overnight hot &amp; cold · Uline</span>
+          </li>
+          <li class="journey-step">
+            <span class="journey-dot" aria-hidden="true">3</span>
+            <strong>Plate Club</strong>
+            <span>Members · half-off dinners</span>
+          </li>
+          <li class="journey-step">
+            <span class="journey-dot" aria-hidden="true">4</span>
+            <strong>Our kitchen</strong>
+            <span>A real location — coming</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact" aria-labelledby="contact-heading" style="padding-bottom:4rem;">
+      <div class="section-inner">
+        <header class="section-header">
+          <h2 id="contact-heading">Contact</h2>
+          <p>Questions before you order? Reach out anytime.</p>
+          <img class="flourish" src="assets/flourish.svg" alt="" />
+        </header>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Get in touch</h3>
+            <p><strong>Phone:</strong> <a id="contact-phone" href="tel:"></a></p>
+            <p><strong>Email:</strong> <a id="contact-email" href="mailto:"></a></p>
+            <p id="contact-location" style="margin-top:0.75rem;"></p>
+            <p id="contact-hours"></p>
+            <div class="social-links">
+              <a id="link-instagram" href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a id="link-tiktok" href="#" target="_blank" rel="noopener noreferrer">TikTok</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <h3>Pickup</h3>
+            <p id="contact-pickup"></p>
+            <p class="tax-note" id="contact-tax" style="margin-top:1rem;"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand" id="footer-name">Fifi's Soul Food Plate</div>
+    <p id="footer-tagline">Soul Food Pop · Home-cooked dinners</p>
+    <p class="footer-journey" id="footer-journey">The Journey: Pop-up → Ship nationwide → Plate Club → Our kitchen</p>
+    <p style="margin-top:0.75rem;">© <span id="footer-year"></span> Fifi's Soul Food Plate. All rights reserved.</p>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div class="cart-overlay" id="cart-overlay" hidden></div>
+  <aside
+    class="cart-drawer"
+    id="cart-drawer"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cart-drawer-title"
+    hidden
+  >
+    <div class="drawer-header">
+      <h2 id="cart-drawer-title">Your cart</h2>
+      <button type="button" class="drawer-close" id="cart-close-btn" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="drawer-body" id="drawer-cart-body">
+      <p class="cart-empty">Your cart is empty.</p>
+    </div>
+    <div class="drawer-footer">
+      <div class="cart-totals" id="drawer-totals"></div>
+      <p class="tax-note" id="drawer-tax-note"></p>
+      <a class="btn btn-primary btn-block" href="#order" id="drawer-checkout-btn">Go to checkout</a>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

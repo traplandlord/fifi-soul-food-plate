@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="Drink">
+  <path d="M28 22 L30 58 Q40 64 50 58 L52 22 Z" fill="#f5e6d3" stroke="#8b6914" stroke-width="1.5"/>
+  <ellipse cx="40" cy="22" rx="12" ry="4" fill="#e8d4b8" stroke="#8b6914" stroke-width="1.5"/>
+  <path d="M32 30 Q40 26 48 32" fill="none" stroke="#c4783a" stroke-width="1.5" opacity="0.6"/>
+  <rect x="36" y="58" width="8" height="6" rx="1" fill="#8b6914"/>
+</svg>
