@@ -226,7 +226,7 @@ Execution path — make each phase pay for the next.
 ### Phase 1 — Soul Food Pop (validate now)
 
 - **Offer:** Fried Chicken Dinner **$20** (2pc chicken, collards, candied sweets, dinner roll).
-- **Cap:** **50 plates** per pop — scarcity + quality control.
+- **Cap:** **50 plates** per pop — scarcity + quality control (**marketing scarcity** for the flyer; not a physics limit on weekly demand). Full uncapped demand + kitchen-throughput model: `ops-simulation-flywheel-demand.csv` / `ops-simulation-flywheel-README.md`.
 - **Channel:** Local SoCal pickup / car / market / event (permit path per §4).
 - **Milestones:**
   - Week 1–2: 10–20 test plates; lock recipe + mid COGS ≤ ~$3.70–$4.50.

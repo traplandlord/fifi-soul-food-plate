@@ -249,3 +249,16 @@ OPS_SIMULATION,mobile_m6_net_cash,mobile_popup,USD_per_month,4000,5414,7000,USD,
 OPS_SIMULATION,location_m6_net_cash,fixed_location,USD_per_month,7000,10859,15000,USD,Cash net before Mom labor; requires volume,calculated,ops-simulation CSV
 OPS_SIMULATION,plates_wk_location_beats_mobile,decision,plates_per_week,150,160,180,count,Prefer lease when forecast ≥~160/wk AND mobile already proven,calculated,ops-simulation CSV
 OPS_SIMULATION,when_to_lease_gate_plates,Phase 4,plates_per_week,80,100,100,count,Sustained ≥80–100/wk blended 8+ weeks (business-plan),estimate,business-plan §10
+highlight,H32_flywheel_uncapped_demand_gt_50_week,logistic mid,week,5,5,5,count,First week latent demand > old 50-plate marketing scarcity line. Sim uses physical capacity.,calculated,flywheel-sim 2026-09-22
+highlight,H33_flywheel_mobile_m6_net_cash,mobile flywheel Month-6,USD,,12095.09,,USD,Uncapped flywheel mobile M6≈1125.8 plates; cash net BEFORE Mom labor. NOT financial advice.,calculated,flywheel-sim 2026-09-22
+highlight,H34_flywheel_mobile_m12_net_cash,mobile flywheel Month-12,USD,,10745.99,,USD,Uncapped flywheel mobile M12≈1040 plates; cash net BEFORE Mom labor.,calculated,flywheel-sim 2026-09-22
+highlight,H35_flywheel_location_m6_net_cash,location_path Month-6,USD,,10885.31,,USD,Lease-when-gated path M6≈1308.9 plates; cash net BEFORE Mom labor.,calculated,flywheel-sim 2026-09-22
+highlight,H36_flywheel_location_m12_net_cash,location_path Month-12,USD,,16459.09,,USD,Lease-when-gated path M12≈1788 plates; cash net BEFORE Mom labor.,calculated,flywheel-sim 2026-09-22
+highlight,H37_flywheel_crossover_week,location beats mobile weekly,week,27,27,27,count,First week location-path SUMMARY_net_cash > mobile-only (after lease).,calculated,flywheel-sim 2026-09-22
+highlight,H38_flywheel_saturation_K,logistic mid,plates_per_week,280.0,450.0,650.0,count,Latent demand saturation K; week-52 mobile cap=260.0 fulfilled=260.,estimate,flywheel-sim 2026-09-22
+highlight,H39_flywheel_lease_gate_week,Phase4 gate,week,22,22,22,count,Demand≥160/wk × 8 wks AND cash≥3mo rent ($11700).,calculated,flywheel-sim 2026-09-22
+highlight,H40_flywheel_m12_plates_wk_mobile,mobile week52-ish,plates_per_week,,260,,count,Week-52 mobile fulfilled; latent=447.7 cap=260.0 lost=252.7.,calculated,flywheel-sim 2026-09-22
+FLYWHEEL_SIM,logistic_K_mid,demand,plates_per_week,280.0,450.0,650.0,count,demand_t=K/(1+e^(-r*(t-t0))); r_mid=0.155 t0=18.0,estimate,2026-09-22
+FLYWHEEL_SIM,no_hard_50_cap,policy,flag,1,1,1,flag,50-plate flyer line = marketing scarcity; sim limited by kitchen throughput only,policy,2026-09-22
+FLYWHEEL_SIM,throughput_pph_mid,kitchen,plates_per_hour,11,13.5,15,count,Effective cook+pack plates/hour,estimate,2026-09-22
+FLYWHEEL_SIM,sat_plates_wk_approx,mobile,plates_per_week,,260.0,,count,Approx plates/wk near saturation given mobile capacity,calculated,2026-09-22

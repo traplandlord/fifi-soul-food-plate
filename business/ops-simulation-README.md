@@ -120,6 +120,20 @@ Until then, rent is a liability, not a flex.
 
 ---
 
+
+---
+
+## Uncapped demand (flywheel) — read this next
+
+The **50-plate** line on the flyer is **marketing scarcity** for a single Soul Food Pop — not a hard weekly volume ceiling.  
+For logistic / S-curve demand growth, social + loyalty flywheel, physical kitchen capacity, lost sales, and mobile-only vs lease-when-gated over **52 weeks**, see:
+
+- `ops-simulation-flywheel-demand.csv`
+- `ops-simulation-flywheel-README.md`
+- Generator: `generate_flywheel_sim.py`
+
+This file (`ops-simulation-location-vs-mobile.csv`) remains the **period snapshot** P&L (week_steady / Month 1/6/12). The flywheel sim is **additive**.
+
 ## Related files
 
 - `fifi-comprehensive-metrics.csv` — highlight rows for this sim  
